@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7939C9542E2106680066DF06 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 7939C9532E2106680066DF06 /* .gitignore */; };
+		7939C9572E21074E0066DF06 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 7939C9562E21074E0066DF06 /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7939C9572E21074E0066DF06 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +86,7 @@
 			);
 			name = Tripple;
 			packageProductDependencies = (
+				7939C9562E21074E0066DF06 /* Kingfisher */,
 			);
 			productName = Tripple;
 			productReference = 7939C9282E2103F00066DF06 /* Tripple.app */;
@@ -113,6 +116,9 @@
 			);
 			mainGroup = 7939C91F2E2103F00066DF06;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				7939C9552E21074E0066DF06 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 7939C9292E2103F00066DF06 /* Products */;
 			projectDirPath = "";
@@ -350,6 +356,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7939C9552E21074E0066DF06 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.4.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7939C9562E21074E0066DF06 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7939C9552E21074E0066DF06 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7939C9202E2103F00066DF06 /* Project object */;
 }
