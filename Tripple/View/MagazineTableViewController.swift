@@ -9,6 +9,8 @@ import UIKit
 
 class MagazineTableViewController: UITableViewController {
 
+    private let magazineData: [Magazine] = MagazineInfo().magazine
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,5 +20,20 @@ class MagazineTableViewController: UITableViewController {
     func configure(){
         self.navigationItem.title = "SeSAC TRAVEL"
         self.navigationItem.largeTitleDisplayMode = .inline
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return magazineData.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(
+            withIdentifier: "magazineTableViewCell",
+            for: indexPath
+        ) as? MagazineTableViewCell else {
+            return UITableViewCell()
+        }
+        
+        return cell
     }
 }

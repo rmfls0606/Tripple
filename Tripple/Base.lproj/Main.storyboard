@@ -35,7 +35,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="467" id="WzA-OE-t8e">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="magazineTableViewCell" rowHeight="467" id="WzA-OE-t8e" customClass="MagazineTableViewCell" customModule="Tripple" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="50" width="393" height="467"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WzA-OE-t8e" id="KoZ-Ri-pjh">
@@ -83,6 +83,12 @@
                                         <constraint firstAttribute="trailingMargin" secondItem="Adn-mj-jMJ" secondAttribute="trailing" constant="16" id="vw5-Jr-cSh"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="magazineContentLabel" destination="QCd-7q-JIm" id="kl0-V4-psi"/>
+                                    <outlet property="magazineDateLabel" destination="7nk-b3-EsZ" id="ymf-Wq-jKE"/>
+                                    <outlet property="magazineTitleLabel" destination="Adn-mj-jMJ" id="JW1-af-LIw"/>
+                                    <outlet property="posterImageView" destination="JiX-Wt-t6C" id="77W-T1-ZUI"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
