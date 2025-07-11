@@ -13,6 +13,7 @@ class MagazineTableViewCell: UITableViewCell {
     @IBOutlet weak var magazineTitleLabel: UILabel!
     @IBOutlet weak var magazineContentLabel: UILabel!
     @IBOutlet weak var magazineDateLabel: UILabel!
+    let dateFormatter = DateFormatter()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -39,6 +40,16 @@ class MagazineTableViewCell: UITableViewCell {
         magazineTitleLabel.text = magazine.title
         magazineContentLabel.text = magazine.subtitle
         magazineDateLabel.text = magazine.date
+        
+        dateFormatter.dateFormat = "yyMMdd"
+        let dateString = dateFormatter.date(from: magazine.date)
+        
+        if let date = dateString{
+            dateFormatter.dateFormat = "yy년 MM월 dd일"
+            magazineDateLabel.text = dateFormatter.string(from: date)
+        }else{
+            magazineDateLabel.text = "알 수 없음"
+        }
         
     }
 }
