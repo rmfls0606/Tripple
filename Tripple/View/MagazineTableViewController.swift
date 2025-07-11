@@ -20,6 +20,8 @@ class MagazineTableViewController: UITableViewController {
     func configure(){
         self.navigationItem.title = "SeSAC TRAVEL"
         self.navigationItem.largeTitleDisplayMode = .inline
+        
+        self.tableView.separatorStyle = .none
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -33,6 +35,9 @@ class MagazineTableViewController: UITableViewController {
         ) as? MagazineTableViewCell else {
             return UITableViewCell()
         }
+        
+        let magazine = magazineData[indexPath.row]
+        cell.configure(magazine: magazine)
         
         return cell
     }
