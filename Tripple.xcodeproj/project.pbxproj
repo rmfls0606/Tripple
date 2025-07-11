@@ -6,8 +6,13 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		7939C9542E2106680066DF06 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 7939C9532E2106680066DF06 /* .gitignore */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		7939C9282E2103F00066DF06 /* Tripple.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tripple.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7939C9532E2106680066DF06 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -45,6 +50,7 @@
 		7939C91F2E2103F00066DF06 = {
 			isa = PBXGroup;
 			children = (
+				7939C9532E2106680066DF06 /* .gitignore */,
 				7939C92A2E2103F00066DF06 /* Tripple */,
 				7939C9292E2103F00066DF06 /* Products */,
 			);
@@ -122,6 +128,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7939C9542E2106680066DF06 /* .gitignore in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
