@@ -16,9 +16,10 @@ class TravelDetailInfoTableViewCell: UITableViewCell {
     @IBOutlet weak var infoLabel: UILabel!
     @IBOutlet weak var travelImageView: UIImageView!
     @IBOutlet weak var cosmosRatingview: CosmosView!
-    private let numberFormatter = NumberFormatter()
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var imageButtonView: UIView!
+    
+    private let numberFormatter = NumberFormatter()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -52,6 +53,8 @@ class TravelDetailInfoTableViewCell: UITableViewCell {
         likeButton.setTitle("", for: .normal)
         likeButton.setImage(UIImage(systemName: "heart"), for: .normal)
         likeButton.tintColor = .white
+        
+        self.selectionStyle = .none
     }
     
     func configure(travel: Travel){
@@ -87,7 +90,6 @@ class TravelDetailInfoTableViewCell: UITableViewCell {
         }else{
             likeButton.isHidden = true
         }
-        
         
         infoLabel.text = "저장 \(saveCount)"
     }
