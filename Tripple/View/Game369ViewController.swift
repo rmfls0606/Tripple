@@ -35,6 +35,7 @@ class Game369ViewController: UIViewController {
         resultLabel.text = ""
         resultLabel.textAlignment = .center
         resultLabel.font = UIFont.systemFont(ofSize: 24, weight: .bold)
+        resultLabel.numberOfLines = 0
     }
     
     @IBAction func inputNumberTextFieldReturn(_ sender: UITextField) {
