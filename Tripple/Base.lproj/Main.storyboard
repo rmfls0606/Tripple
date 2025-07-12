@@ -314,6 +314,52 @@
                                     <outlet property="travelImageView" destination="ebn-DX-Im9" id="08d-Ul-WdS"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="107" id="vDd-Hg-YRJ">
+                                <rect key="frame" x="0.0" y="205" width="393" height="107"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vDd-Hg-YRJ" id="QVB-hg-Um8">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="107"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tGe-5i-rjB">
+                                            <rect key="frame" x="16" y="0.0" width="361" height="107"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dfm-SA-sd9">
+                                                    <rect key="frame" x="16" y="8" width="329" height="91"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nkq-f3-pup">
+                                                    <rect key="frame" x="295" y="8" width="58" height="24"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="58" id="K2K-dY-wF6"/>
+                                                        <constraint firstAttribute="height" constant="24" id="OVH-JH-mnU"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemBrownColor"/>
+                                            <constraints>
+                                                <constraint firstItem="Nkq-f3-pup" firstAttribute="top" secondItem="tGe-5i-rjB" secondAttribute="top" constant="8" id="8LJ-Fz-rG8"/>
+                                                <constraint firstItem="Dfm-SA-sd9" firstAttribute="leading" secondItem="tGe-5i-rjB" secondAttribute="leading" constant="16" id="CnV-Nh-fe3"/>
+                                                <constraint firstItem="Dfm-SA-sd9" firstAttribute="top" secondItem="tGe-5i-rjB" secondAttribute="top" constant="8" id="Kwm-jB-xIJ"/>
+                                                <constraint firstAttribute="trailing" secondItem="Nkq-f3-pup" secondAttribute="trailing" constant="8" id="S1Y-LR-zwH"/>
+                                                <constraint firstAttribute="bottom" secondItem="Dfm-SA-sd9" secondAttribute="bottom" constant="8" id="hLv-l6-t8o"/>
+                                                <constraint firstAttribute="trailing" secondItem="Dfm-SA-sd9" secondAttribute="trailing" constant="16" id="odL-5U-qWN"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="tGe-5i-rjB" firstAttribute="leading" secondItem="QVB-hg-Um8" secondAttribute="leading" constant="16" id="0iV-IV-Yy5"/>
+                                        <constraint firstItem="tGe-5i-rjB" firstAttribute="top" secondItem="QVB-hg-Um8" secondAttribute="top" id="YHV-jd-f9y"/>
+                                        <constraint firstAttribute="bottom" secondItem="tGe-5i-rjB" secondAttribute="bottom" id="qwu-hs-qun"/>
+                                        <constraint firstAttribute="trailing" secondItem="tGe-5i-rjB" secondAttribute="trailing" constant="16" id="rcP-gx-JIk"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="QQV-VW-WKI" id="lVn-Mg-jYN"/>
@@ -336,6 +382,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBrownColor">
+            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
