@@ -9,7 +9,7 @@ import UIKit
 
 class TravelDetailInfoTableViewController: UITableViewController {
 
-    private let travelInfoData: [Travel] = TravelInfo().travel
+    private var travelInfoData: [Travel] = TravelInfo().travel
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +37,16 @@ class TravelDetailInfoTableViewController: UITableViewController {
         let travel: Travel = travelInfoData[indexPath.row]
         
         cell.configure(travel: travel)
+        cell.likeButton.tag = indexPath.row
+        
+        cell.likeButton.addTarget(self, action: #selector(likeButtonClicked), for: .touchUpInside)
         
         return cell
+    }
+    
+    @objc
+    private func likeButtonClicked(_ sender: UIButton){
+        travelInfoData[sender.tag].like?.toggle()
+        tableView.reloadData()
     }
 }
