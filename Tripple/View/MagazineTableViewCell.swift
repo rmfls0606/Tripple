@@ -37,8 +37,12 @@ class MagazineTableViewCell: UITableViewCell {
     }
     
     func configure(magazine: Magazine){
-        guard let image_url = URL(string: magazine.photo_image) else { return }
-        posterImageView.kf.setImage(with: image_url)
+        if let image_url = URL(string: magazine.photo_image){
+            posterImageView.kf.setImage(with: image_url)
+        }else{
+            posterImageView.image = nil
+            posterImageView.backgroundColor = .systemGray4
+        }
         
         magazineTitleLabel.text = magazine.title
         magazineContentLabel.text = magazine.subtitle
