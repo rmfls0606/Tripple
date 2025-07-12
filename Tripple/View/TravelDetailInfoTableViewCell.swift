@@ -7,6 +7,7 @@
 
 import UIKit
 import Kingfisher
+import Cosmos
 
 class TravelDetailInfoTableViewCell: UITableViewCell {
     
@@ -14,7 +15,7 @@ class TravelDetailInfoTableViewCell: UITableViewCell {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var infoLabel: UILabel!
     @IBOutlet weak var travelImageView: UIImageView!
-    
+    @IBOutlet weak var cosmosRatingview: CosmosView!
     private let numberFormatter = NumberFormatter()
     
     override func awakeFromNib() {
@@ -34,6 +35,16 @@ class TravelDetailInfoTableViewCell: UITableViewCell {
         travelImageView.contentMode = .scaleAspectFill
         travelImageView.layer.cornerRadius = 10
         travelImageView.clipsToBounds = true
+        
+        cosmosRatingview.settings.starSize = 15
+        cosmosRatingview.settings.starMargin = 0
+        cosmosRatingview.settings.textColor = .systemGray2
+        cosmosRatingview.settings.textFont = .systemFont(ofSize: 12)
+        cosmosRatingview.settings.updateOnTouch = false
+        cosmosRatingview.settings.filledColor = .orange
+        cosmosRatingview.settings.emptyColor = .systemGray5
+        cosmosRatingview.settings.filledBorderColor = .orange
+        cosmosRatingview.settings.emptyBorderColor = .systemGray5
     }
     
     func configure(travel: Travel){
@@ -50,6 +61,15 @@ class TravelDetailInfoTableViewCell: UITableViewCell {
         numberFormatter.numberStyle = .decimal
         let saveCount = numberFormatter.string(from: NSNumber(integerLiteral: travel.save ?? 0)) ?? "0"
         
-        infoLabel.text = "평점(\(travel.grade ?? 0.0)) · 저장 \(saveCount)"
+        if let grade = travel.grade{
+            cosmosRatingview.isHidden = false
+            cosmosRatingview.rating = grade
+            cosmosRatingview.text = "(\(grade)) · "
+        }else{
+            cosmosRatingview.isHidden = true
+        }
+        
+        
+        infoLabel.text = "저장 \(saveCount)"
     }
 }
