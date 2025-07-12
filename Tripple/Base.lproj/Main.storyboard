@@ -154,6 +154,11 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="3,6,9Game" image="gamecontroller" catalog="system" id="slQ-dz-7kX"/>
                     <navigationItem key="navigationItem" id="nYZ-hH-ne0"/>
+                    <connections>
+                        <outlet property="clap369ResultTextView" destination="Y5S-i4-yF4" id="n0c-C1-Gjg"/>
+                        <outlet property="inputNumberTextField" destination="lxU-LS-CxA" id="rRm-5Z-8vx"/>
+                        <outlet property="resultLabel" destination="PLB-KM-bni" id="M9F-Na-jDR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S0C-xs-FA5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
