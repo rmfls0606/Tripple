@@ -15,6 +15,8 @@ class TravelDetailInfoTableViewCell: UITableViewCell {
     @IBOutlet weak var infoLabel: UILabel!
     @IBOutlet weak var travelImageView: UIImageView!
     
+    private let numberFormatter = NumberFormatter()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -45,7 +47,9 @@ class TravelDetailInfoTableViewCell: UITableViewCell {
         titleLabel.text = travel.title ?? "알 수 없음"
         descriptionLabel.text = travel.description ?? "-"
         
-        infoLabel.text = "평점(\(travel.grade ?? 0.0)) · 저장 \(travel.save ?? 0)"
+        numberFormatter.numberStyle = .decimal
+        let saveCount = numberFormatter.string(from: NSNumber(integerLiteral: travel.save ?? 0)) ?? "0"
         
+        infoLabel.text = "평점(\(travel.grade ?? 0.0)) · 저장 \(saveCount)"
     }
 }
