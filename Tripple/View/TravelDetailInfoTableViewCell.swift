@@ -17,6 +17,7 @@ class TravelDetailInfoTableViewCell: UITableViewCell {
     @IBOutlet weak var travelImageView: UIImageView!
     @IBOutlet weak var cosmosRatingview: CosmosView!
     private let numberFormatter = NumberFormatter()
+    @IBOutlet weak var likeButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -45,6 +46,10 @@ class TravelDetailInfoTableViewCell: UITableViewCell {
         cosmosRatingview.settings.emptyColor = .systemGray5
         cosmosRatingview.settings.filledBorderColor = .orange
         cosmosRatingview.settings.emptyBorderColor = .systemGray5
+        
+        likeButton.setTitle("", for: .normal)
+        likeButton.setImage(UIImage(systemName: "heart"), for: .normal)
+        likeButton.tintColor = .white
     }
     
     func configure(travel: Travel){
@@ -67,6 +72,17 @@ class TravelDetailInfoTableViewCell: UITableViewCell {
             cosmosRatingview.text = "(\(grade)) · "
         }else{
             cosmosRatingview.isHidden = true
+        }
+        
+        if let likeState = travel.like{
+            likeButton.isHidden = false
+            if likeState{
+                likeButton.setImage(UIImage(systemName: "heart.fill")?.withTintColor(.systemPink, renderingMode: .alwaysOriginal), for: .normal)
+            }else{
+                likeButton.setImage(UIImage(systemName: "heart"), for: .normal)
+            }
+        }else{
+            likeButton.isHidden = true
         }
         
         
