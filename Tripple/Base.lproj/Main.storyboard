@@ -106,7 +106,7 @@
         <!--3,6,9Game-->
         <scene sceneID="6A3-DN-vs3">
             <objects>
-                <viewController id="uBI-T0-Mub" sceneMemberID="viewController">
+                <viewController id="uBI-T0-Mub" customClass="Game369ViewController" customModule="Tripple" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eay-S2-IdP">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
