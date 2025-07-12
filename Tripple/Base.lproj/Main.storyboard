@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -102,17 +103,75 @@
             </objects>
             <point key="canvasLocation" x="1983.9694656488548" y="-35.211267605633807"/>
         </scene>
+        <!--3,6,9Game-->
+        <scene sceneID="6A3-DN-vs3">
+            <objects>
+                <viewController id="uBI-T0-Mub" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eay-S2-IdP">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="최대 숫자를 입력해주세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lxU-LS-CxA">
+                                <rect key="frame" x="16" y="134" width="361" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="0J1-bt-Ogp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Y5S-i4-yF4">
+                                <rect key="frame" x="16" y="224" width="361" height="180.66666666666663"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Y5S-i4-yF4" secondAttribute="height" multiplier="1:0.5" id="Hbi-wV-rTV"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PLB-KM-bni">
+                                <rect key="frame" x="16" y="424.66666666666669" width="361" height="20.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="KIY-bJ-a51"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="lxU-LS-CxA" firstAttribute="leading" secondItem="KIY-bJ-a51" secondAttribute="leading" constant="16" id="6XF-3c-SLl"/>
+                            <constraint firstItem="PLB-KM-bni" firstAttribute="leading" secondItem="KIY-bJ-a51" secondAttribute="leading" constant="16" id="HbB-rG-uWb"/>
+                            <constraint firstItem="lxU-LS-CxA" firstAttribute="top" secondItem="KIY-bJ-a51" secondAttribute="top" constant="16" id="NXq-s8-B2a"/>
+                            <constraint firstItem="KIY-bJ-a51" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="PLB-KM-bni" secondAttribute="bottom" constant="16" id="Os9-bB-OMM"/>
+                            <constraint firstItem="Y5S-i4-yF4" firstAttribute="leading" secondItem="KIY-bJ-a51" secondAttribute="leading" constant="16" id="Rdf-YK-SGt"/>
+                            <constraint firstItem="KIY-bJ-a51" firstAttribute="trailing" secondItem="PLB-KM-bni" secondAttribute="trailing" constant="16" id="WCl-Cp-2b7"/>
+                            <constraint firstItem="KIY-bJ-a51" firstAttribute="trailing" secondItem="Y5S-i4-yF4" secondAttribute="trailing" constant="16" id="dGy-EF-C1K"/>
+                            <constraint firstItem="PLB-KM-bni" firstAttribute="top" secondItem="Y5S-i4-yF4" secondAttribute="bottom" constant="20" id="oLz-Ih-WXw"/>
+                            <constraint firstItem="KIY-bJ-a51" firstAttribute="trailing" secondItem="lxU-LS-CxA" secondAttribute="trailing" constant="16" id="x4e-Ob-Qag"/>
+                            <constraint firstItem="Y5S-i4-yF4" firstAttribute="top" secondItem="lxU-LS-CxA" secondAttribute="bottom" constant="30" id="yha-Xo-wge"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="3,6,9Game" image="gamecontroller" catalog="system" id="slQ-dz-7kX"/>
+                    <navigationItem key="navigationItem" id="nYZ-hH-ne0"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S0C-xs-FA5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1052.6717557251909" y="738.73239436619724"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Ofi-nP-QLu">
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="cuE-XR-JUe" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vwS-x8-epA">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="ofq-1h-eCD" kind="relationship" relationship="viewControllers" id="2OZ-0v-15G"/>
+                        <segue destination="uBI-T0-Mub" kind="relationship" relationship="viewControllers" id="IwP-f6-rRx"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9yU-pZ-G87" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -121,7 +180,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="gamecontroller" catalog="system" width="128" height="79"/>
         <image name="magazine" catalog="system" width="110" height="128"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
