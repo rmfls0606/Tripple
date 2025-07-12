@@ -57,6 +57,7 @@ class TravelDetailInfoTableViewCell: UITableViewCell {
         if let travel_image = travel.travel_image, let image_url = URL(string:  travel_image){
             travelImageView.kf.setImage(with: image_url)
         }else{
+            travelImageView.image = nil
             travelImageView.backgroundColor = .systemGray4
         }
         
