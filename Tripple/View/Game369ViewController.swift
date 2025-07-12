@@ -31,8 +31,8 @@ class Game369ViewController: UIViewController {
         clap369ResultTextView.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
         clap369ResultTextView.isEditable = false
         clap369ResultTextView.textAlignment = .center
-
-        resultLabel.text = "숫자 99까지 총 박수는 45번 입니다."
+        
+        resultLabel.text = ""
         resultLabel.textAlignment = .center
         resultLabel.font = UIFont.systemFont(ofSize: 24, weight: .bold)
     }
@@ -46,10 +46,32 @@ class Game369ViewController: UIViewController {
             return
         }
         
-        guard Int(text) != nil else{
+        guard let intText = Int(text) else{
             self.clap369ResultTextView.text = "잘못된 형식의 입력입니다. 숫자를 입력해주세요."
             self.resultLabel.text = ""
             return
         }
+        
+        var clapResult: [String] = []
+        var clapResultString: String = ""
+        var clapCnt: Int = 0
+        
+        for num in 1...intText{
+            let digitArr = String(num).map{$0}
+            var digitResult: String = ""
+            for digit in digitArr{
+                if ["3","6","9"].contains(digit){
+                    digitResult += "👏"
+                    clapCnt += 1
+                    continue
+                }
+                digitResult += String(digit)
+            }
+            clapResult.append(digitResult)
+        }
+        
+        clapResultString = clapResult.joined(separator: ", ")
+        clap369ResultTextView.text = clapResultString
+        resultLabel.text = "숫자 \(intText)까지 총 박수는 \(clapCnt)번 입니다."
     }
 }
