@@ -13,6 +13,7 @@ class MagazineTableViewCell: UITableViewCell {
     @IBOutlet weak var magazineTitleLabel: UILabel!
     @IBOutlet weak var magazineContentLabel: UILabel!
     @IBOutlet weak var magazineDateLabel: UILabel!
+    
     let dateFormatter = DateFormatter()
     
     override func awakeFromNib() {
@@ -31,6 +32,8 @@ class MagazineTableViewCell: UITableViewCell {
         magazineDateLabel.font = .systemFont(ofSize: 12)
         magazineDateLabel.textAlignment = .right
         magazineDateLabel.textColor = .systemGray2
+        
+        self.selectionStyle = .none
     }
     
     func configure(magazine: Magazine){
@@ -50,6 +53,5 @@ class MagazineTableViewCell: UITableViewCell {
         }else{
             magazineDateLabel.text = "알 수 없음"
         }
-        
     }
 }
