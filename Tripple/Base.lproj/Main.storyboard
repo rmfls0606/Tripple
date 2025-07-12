@@ -307,6 +307,7 @@
                                 <connections>
                                     <outlet property="cosmosRatingview" destination="mju-Ue-fmu" id="F8Z-Yi-bq5"/>
                                     <outlet property="descriptionLabel" destination="WTV-Nl-1rZ" id="ogx-dx-Neh"/>
+                                    <outlet property="imageButtonView" destination="WnU-V0-qSk" id="6Oi-8p-xIW"/>
                                     <outlet property="infoLabel" destination="c28-YM-kBl" id="eIk-yl-rwC"/>
                                     <outlet property="likeButton" destination="M36-PV-PZE" id="z4O-fZ-kLm"/>
                                     <outlet property="titleLabel" destination="Yj6-xe-Z3Y" id="jxM-w7-AXa"/>

@@ -18,6 +18,7 @@ class TravelDetailInfoTableViewCell: UITableViewCell {
     @IBOutlet weak var cosmosRatingview: CosmosView!
     private let numberFormatter = NumberFormatter()
     @IBOutlet weak var likeButton: UIButton!
+    @IBOutlet weak var imageButtonView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -34,8 +35,9 @@ class TravelDetailInfoTableViewCell: UITableViewCell {
         infoLabel.textColor = .systemGray2
         
         travelImageView.contentMode = .scaleAspectFill
-        travelImageView.layer.cornerRadius = 10
-        travelImageView.clipsToBounds = true
+        
+        imageButtonView.layer.cornerRadius = 10
+        imageButtonView.clipsToBounds = true
         
         cosmosRatingview.settings.starSize = 15
         cosmosRatingview.settings.starMargin = 0
