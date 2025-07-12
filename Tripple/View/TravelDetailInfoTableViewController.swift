@@ -34,6 +34,9 @@ class TravelDetailInfoTableViewController: UITableViewController {
             return UITableViewCell()
         }
         
+        let travel: Travel = travelInfoData[indexPath.row]
+        
+        cell.configure(travel: travel)
         
         return cell
     }
