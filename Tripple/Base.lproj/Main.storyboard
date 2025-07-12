@@ -118,6 +118,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="inputNumberTextFieldReturn:" destination="uBI-T0-Mub" eventType="editingDidEndOnExit" id="Cnc-vg-WE6"/>
+                                </connections>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Y5S-i4-yF4">
                                 <rect key="frame" x="16" y="224" width="361" height="180.66666666666663"/>
