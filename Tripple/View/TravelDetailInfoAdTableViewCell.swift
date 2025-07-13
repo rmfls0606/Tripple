@@ -29,6 +29,8 @@ class TravelDetailInfoAdTableViewCell: UITableViewCell {
         adTagLabel.textAlignment = .center
         adTagLabel.layer.cornerRadius = 10
         adTagLabel.clipsToBounds = true
+        
+        self.selectionStyle = .none
     }
     
     func configure(travel: Travel){
