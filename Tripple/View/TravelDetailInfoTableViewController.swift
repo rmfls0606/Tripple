@@ -7,13 +7,26 @@
 
 import UIKit
 
-class TravelDetailInfoTableViewController: UITableViewController {
+enum AdColor: CaseIterable{
+    case pink, green
+    
+    var color: UIColor{
+        switch self{
+        case.pink:
+            return UIColor.systemPink
+        case .green:
+            return UIColor.systemGreen
+        }
+    }
+}
 
+class TravelDetailInfoTableViewController: UITableViewController {
+    
     private var travelInfoData: [Travel] = TravelInfo().travel
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         configure()
     }
     
@@ -51,7 +64,8 @@ class TravelDetailInfoTableViewController: UITableViewController {
             }
             
             let travel: Travel = travelInfoData[indexPath.row]
-            cell.configure(travel: travel)
+            let adColor = AdColor.allCases[indexPath.row % 2].color
+            cell.configure(travel: travel, adColor: adColor)
             
             return cell
         }

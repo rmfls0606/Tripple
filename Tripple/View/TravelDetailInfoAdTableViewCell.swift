@@ -16,7 +16,6 @@ class TravelDetailInfoAdTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        adBackgroundView.backgroundColor = .systemPink
         adBackgroundView.layer.cornerRadius = 10
         adBackgroundView.clipsToBounds = true
         
@@ -33,7 +32,8 @@ class TravelDetailInfoAdTableViewCell: UITableViewCell {
         self.selectionStyle = .none
     }
     
-    func configure(travel: Travel){
+    func configure(travel: Travel, adColor: UIColor){
         adTextLabel.text = travel.title
+        adBackgroundView.backgroundColor = adColor
     }
 }
