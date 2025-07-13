@@ -12,4 +12,26 @@ class TravelDetailInfoAdTableViewCell: UITableViewCell {
     @IBOutlet weak var adBackgroundView: UIView!
     @IBOutlet weak var adTextLabel: UILabel!
     @IBOutlet weak var adTagLabel: UILabel!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        adBackgroundView.backgroundColor = .systemPink
+        adBackgroundView.layer.cornerRadius = 10
+        adBackgroundView.clipsToBounds = true
+        
+        adTextLabel.font = .systemFont(ofSize: 16, weight: .bold)
+        adTextLabel.numberOfLines = 2
+        adTextLabel.textAlignment = .center
+        
+        adTagLabel.text = "AD"
+        adTagLabel.backgroundColor = .white
+        adTagLabel.textAlignment = .center
+        adTagLabel.layer.cornerRadius = 10
+        adTagLabel.clipsToBounds = true
+    }
+    
+    func configure(travel: Travel){
+        adTextLabel.text = travel.title
+    }
 }
