@@ -27,21 +27,44 @@ class TravelDetailInfoTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(
-            withIdentifier: "travelDetailInfoTableViewCell",
-            for: indexPath
-        ) as? TravelDetailInfoTableViewCell else{
-            return UITableViewCell()
+        let showAd = travelInfoData[indexPath.row].ad
+        
+        if !showAd{
+            guard let cell = tableView.dequeueReusableCell(
+                withIdentifier: "travelDetailInfoTableViewCell",
+                for: indexPath
+            ) as? TravelDetailInfoTableViewCell else{
+                return UITableViewCell()
+            }
+            
+            let travel: Travel = travelInfoData[indexPath.row]
+            
+            cell.configure(travel: travel)
+            cell.likeButton.tag = indexPath.row
+            
+            cell.likeButton.addTarget(self, action: #selector(likeButtonClicked), for: .touchUpInside)
+            
+            return cell
+        }else{
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "travelDetailInfoAdTableViewCell", for: indexPath) as? TravelDetailInfoAdTableViewCell else{
+                return UITableViewCell()
+            }
+            
+            let travel: Travel = travelInfoData[indexPath.row]
+            cell.configure(travel: travel)
+            
+            return cell
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let showAd = travelInfoData[indexPath.row].ad
         
-        let travel: Travel = travelInfoData[indexPath.row]
-        
-        cell.configure(travel: travel)
-        cell.likeButton.tag = indexPath.row
-        
-        cell.likeButton.addTarget(self, action: #selector(likeButtonClicked), for: .touchUpInside)
-        
-        return cell
+        if !showAd{
+            return 160
+        }else{
+            return 80
+        }
     }
     
     @objc
