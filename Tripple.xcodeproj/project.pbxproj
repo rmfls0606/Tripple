@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7939C9542E2106680066DF06 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 7939C9532E2106680066DF06 /* .gitignore */; };
 		7939C9572E21074E0066DF06 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 7939C9562E21074E0066DF06 /* Kingfisher */; };
+		799C4B1F2E25261900175EC1 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 799C4B1E2E25261900175EC1 /* Toast */; };
 		79DD2F512E22D1E20010EB49 /* Cosmos in Frameworks */ = {isa = PBXBuildFile; productRef = 79DD2F502E22D1E20010EB49 /* Cosmos */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				799C4B1F2E25261900175EC1 /* Toast in Frameworks */,
 				79DD2F512E22D1E20010EB49 /* Cosmos in Frameworks */,
 				7939C9572E21074E0066DF06 /* Kingfisher in Frameworks */,
 			);
@@ -90,6 +92,7 @@
 			packageProductDependencies = (
 				7939C9562E21074E0066DF06 /* Kingfisher */,
 				79DD2F502E22D1E20010EB49 /* Cosmos */,
+				799C4B1E2E25261900175EC1 /* Toast */,
 			);
 			productName = Tripple;
 			productReference = 7939C9282E2103F00066DF06 /* Tripple.app */;
@@ -122,6 +125,7 @@
 			packageReferences = (
 				7939C9552E21074E0066DF06 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				79DD2F4F2E22D1E20010EB49 /* XCRemoteSwiftPackageReference "Cosmos" */,
+				799C4B1D2E25261900175EC1 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 7939C9292E2103F00066DF06 /* Products */;
@@ -370,6 +374,14 @@
 				minimumVersion = 8.4.0;
 			};
 		};
+		799C4B1D2E25261900175EC1 /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scalessec/Toast-Swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.1;
+			};
+		};
 		79DD2F4F2E22D1E20010EB49 /* XCRemoteSwiftPackageReference "Cosmos" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/evgenyneu/Cosmos.git";
@@ -385,6 +397,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7939C9552E21074E0066DF06 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		799C4B1E2E25261900175EC1 /* Toast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 799C4B1D2E25261900175EC1 /* XCRemoteSwiftPackageReference "Toast-Swift" */;
+			productName = Toast;
 		};
 		79DD2F502E22D1E20010EB49 /* Cosmos */ = {
 			isa = XCSwiftPackageProductDependency;
