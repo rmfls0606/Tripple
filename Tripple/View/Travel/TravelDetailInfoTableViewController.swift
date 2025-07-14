@@ -78,13 +78,7 @@ class TravelDetailInfoTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let showAd = travelInfoData[indexPath.row].ad
-        
-        if !showAd{
-            return 160
-        }else{
-            return 80
-        }
+        return UITableView.automaticDimension
     }
     
     override func tableView(
