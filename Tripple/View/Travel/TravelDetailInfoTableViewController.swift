@@ -34,8 +34,10 @@ class TravelDetailInfoTableViewController: UITableViewController {
         self.navigationItem.title = "도시 상세 정보"
         self.navigationItem.largeTitleDisplayMode = .inline
         
-        let xib = UINib(nibName: "TravelDetailInfoTableViewCell", bundle: nil)
-        tableView.register(xib, forCellReuseIdentifier: "TravelDetailInfoTableViewCell")
+        let travelDetailInfoXib = UINib(nibName: "TravelDetailInfoTableViewCell", bundle: nil)
+        let travelDetailInfoAdXib = UINib(nibName: "TravelDetailInfoAdTableViewCell", bundle: nil)
+        tableView.register(travelDetailInfoXib, forCellReuseIdentifier: "TravelDetailInfoTableViewCell")
+        tableView.register(travelDetailInfoAdXib, forCellReuseIdentifier: "TravelDetailInfoAdTableViewCell")
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -45,7 +47,7 @@ class TravelDetailInfoTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let showAd = travelInfoData[indexPath.row].ad
         
-//        if !showAd{
+        if !showAd{
             guard let cell = tableView.dequeueReusableCell(
                 withIdentifier: "TravelDetailInfoTableViewCell",
                 for: indexPath
@@ -61,17 +63,17 @@ class TravelDetailInfoTableViewController: UITableViewController {
             cell.likeButton.addTarget(self, action: #selector(likeButtonClicked), for: .touchUpInside)
             
             return cell
-//        }else{
-//            guard let cell = tableView.dequeueReusableCell(withIdentifier: "travelDetailInfoAdTableViewCell", for: indexPath) as? TravelDetailInfoAdTableViewCell else{
-//                return UITableViewCell()
-//            }
-//            
-//            let travel: Travel = travelInfoData[indexPath.row]
-//            let adColor = AdColor.allCases[indexPath.row % 2].color
-//            cell.configure(travel: travel, adColor: adColor)
-//            
-//            return cell
-//        }
+        }else{
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "TravelDetailInfoAdTableViewCell", for: indexPath) as? TravelDetailInfoAdTableViewCell else{
+                return UITableViewCell()
+            }
+            
+            let travel: Travel = travelInfoData[indexPath.row]
+            let adColor = AdColor.allCases[indexPath.row % 2].color
+            cell.configure(travel: travel, adColor: adColor)
+            
+            return cell
+        }
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
