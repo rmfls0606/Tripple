@@ -17,12 +17,12 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pwf-kp-3Lw">
-                        <rect key="frame" x="393.66666666666669" y="16" width="198.33333333333331" height="248"/>
+                        <rect key="frame" x="393.66666666666669" y="16" width="198.33333333333331" height="238"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Eqm-d4-TBe">
-                                <rect key="frame" x="0.0" y="0.0" width="198.33333333333334" height="248"/>
+                                <rect key="frame" x="0.0" y="0.0" width="198.33333333333334" height="238"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="Eqm-d4-TBe" secondAttribute="height" multiplier="0.8:1" id="heB-oQ-IcP"/>
+                                    <constraint firstAttribute="width" secondItem="Eqm-d4-TBe" secondAttribute="height" multiplier="0.3:0.36" id="heB-oQ-IcP"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="04i-i4-rxG">
@@ -39,7 +39,7 @@
                             <constraint firstAttribute="bottom" secondItem="Eqm-d4-TBe" secondAttribute="bottom" id="0Tc-4X-yQC"/>
                             <constraint firstItem="04i-i4-rxG" firstAttribute="top" secondItem="Eqm-d4-TBe" secondAttribute="top" constant="8" id="KLx-fK-B9u"/>
                             <constraint firstAttribute="trailing" secondItem="Eqm-d4-TBe" secondAttribute="trailing" id="SJq-Ba-eHy"/>
-                            <constraint firstAttribute="width" secondItem="Eqm-d4-TBe" secondAttribute="height" multiplier="0.8:1" id="V8Q-Ud-fG6"/>
+                            <constraint firstAttribute="width" secondItem="Eqm-d4-TBe" secondAttribute="height" multiplier="0.3:0.36" id="V8Q-Ud-fG6"/>
                             <constraint firstItem="Eqm-d4-TBe" firstAttribute="top" secondItem="Pwf-kp-3Lw" secondAttribute="top" id="ZQU-yl-0qR"/>
                             <constraint firstItem="Eqm-d4-TBe" firstAttribute="trailing" secondItem="04i-i4-rxG" secondAttribute="trailing" constant="8" id="g7q-7h-InZ"/>
                         </constraints>
@@ -90,9 +90,11 @@
                     <constraint firstItem="kaS-jj-hXj" firstAttribute="top" secondItem="bE5-NB-187" secondAttribute="bottom" constant="5" id="T4w-JD-HeM"/>
                     <constraint firstItem="kaS-jj-hXj" firstAttribute="leading" secondItem="dFF-tN-rF6" secondAttribute="leading" constant="16" id="TMX-oA-x1o"/>
                     <constraint firstItem="UdD-lO-Qn5" firstAttribute="leading" secondItem="dFF-tN-rF6" secondAttribute="leading" constant="16" id="ZZv-Uy-0zR"/>
-                    <constraint firstAttribute="bottom" secondItem="Pwf-kp-3Lw" secondAttribute="bottom" constant="16" id="f8m-YX-250"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Pwf-kp-3Lw" secondAttribute="bottom" constant="16" id="f8m-YX-250"/>
                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="UdD-lO-Qn5" secondAttribute="bottom" constant="16" id="fte-oj-WeT"/>
                     <constraint firstItem="Pwf-kp-3Lw" firstAttribute="top" secondItem="dFF-tN-rF6" secondAttribute="top" constant="16" id="g2u-1E-UrX"/>
+                    <constraint firstItem="Eqm-d4-TBe" firstAttribute="width" secondItem="dFF-tN-rF6" secondAttribute="width" multiplier="0.326206" id="jjm-D8-S56"/>
+                    <constraint firstItem="Pwf-kp-3Lw" firstAttribute="width" secondItem="dFF-tN-rF6" secondAttribute="width" multiplier="0.326206" id="nrL-lr-fTR"/>
                     <constraint firstAttribute="trailing" secondItem="Pwf-kp-3Lw" secondAttribute="trailing" constant="16" id="qzV-pq-XaL"/>
                     <constraint firstItem="Pwf-kp-3Lw" firstAttribute="leading" secondItem="bE5-NB-187" secondAttribute="trailing" constant="16" id="toj-CO-EIT"/>
                     <constraint firstItem="Pwf-kp-3Lw" firstAttribute="leading" secondItem="UdD-lO-Qn5" secondAttribute="trailing" constant="16" id="z6O-ub-EvR"/>

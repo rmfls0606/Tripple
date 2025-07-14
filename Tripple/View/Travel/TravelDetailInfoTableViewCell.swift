@@ -26,11 +26,11 @@ class TravelDetailInfoTableViewCell: UITableViewCell {
         
         titleLabel.text = ""
         titleLabel.font = .systemFont(ofSize: 16, weight: .semibold)
-        titleLabel.numberOfLines = 2
+        titleLabel.numberOfLines = 0
         
         descriptionLabel.font = .systemFont(ofSize: 14)
         descriptionLabel.textColor = .systemGray
-        descriptionLabel.numberOfLines = 2
+        descriptionLabel.numberOfLines = 0
         
         infoLabel.font = .systemFont(ofSize: 12)
         infoLabel.textColor = .systemGray2
