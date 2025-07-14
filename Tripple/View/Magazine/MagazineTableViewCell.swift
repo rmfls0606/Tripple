@@ -24,10 +24,11 @@ class MagazineTableViewCell: UITableViewCell {
         posterImageView.clipsToBounds = true
         
         magazineTitleLabel.font = .systemFont(ofSize: 20, weight: .bold)
-        magazineTitleLabel.numberOfLines = 2
+        magazineTitleLabel.numberOfLines = 0
         
         magazineContentLabel.font = .systemFont(ofSize: 14)
         magazineContentLabel.textColor = .systemGray2
+        magazineContentLabel.numberOfLines = 0
         
         magazineDateLabel.font = .systemFont(ofSize: 12)
         magazineDateLabel.textAlignment = .right
