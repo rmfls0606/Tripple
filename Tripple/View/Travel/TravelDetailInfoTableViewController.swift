@@ -92,7 +92,7 @@ class TravelDetailInfoTableViewController: UITableViewController {
         didSelectRowAt indexPath: IndexPath
     ) {
         if travelInfoData[indexPath.row].ad{
-            self.view.makeToast(
+            self.navigationController?.view.makeToast(
                     "해당 셀은 광고 셀입니다.",
                     duration: 2,
                     position: ToastPosition.bottom
