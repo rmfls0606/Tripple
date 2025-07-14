@@ -20,7 +20,7 @@
                         <rect key="frame" x="16" y="0.0" width="361" height="119"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tBG-R8-LJi">
-                                <rect key="frame" x="16" y="8" width="329" height="103"/>
+                                <rect key="frame" x="16" y="16" width="329" height="87"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -39,10 +39,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="tBG-R8-LJi" firstAttribute="leading" secondItem="VPc-bb-PAQ" secondAttribute="leading" constant="16" id="0u6-Uv-a7H"/>
-                            <constraint firstAttribute="bottom" secondItem="tBG-R8-LJi" secondAttribute="bottom" constant="8" id="77p-T2-gyD"/>
+                            <constraint firstAttribute="bottom" secondItem="tBG-R8-LJi" secondAttribute="bottom" constant="16" id="77p-T2-gyD"/>
                             <constraint firstAttribute="trailing" secondItem="nwL-1b-62d" secondAttribute="trailing" constant="8" id="CpB-eM-fIC"/>
                             <constraint firstAttribute="trailing" secondItem="tBG-R8-LJi" secondAttribute="trailing" constant="16" id="Pc3-dW-KJM"/>
-                            <constraint firstItem="tBG-R8-LJi" firstAttribute="top" secondItem="VPc-bb-PAQ" secondAttribute="top" constant="8" id="bez-u7-IBb"/>
+                            <constraint firstItem="tBG-R8-LJi" firstAttribute="top" secondItem="VPc-bb-PAQ" secondAttribute="top" constant="16" id="bez-u7-IBb"/>
                             <constraint firstItem="nwL-1b-62d" firstAttribute="top" secondItem="VPc-bb-PAQ" secondAttribute="top" constant="8" id="d0h-A0-FgU"/>
                         </constraints>
                     </view>

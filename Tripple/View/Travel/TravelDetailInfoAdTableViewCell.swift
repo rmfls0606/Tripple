@@ -20,7 +20,7 @@ class TravelDetailInfoAdTableViewCell: UITableViewCell {
         adBackgroundView.clipsToBounds = true
         
         adTextLabel.font = .systemFont(ofSize: 16, weight: .bold)
-        adTextLabel.numberOfLines = 2
+        adTextLabel.numberOfLines = 0
         adTextLabel.textAlignment = .center
         
         adTagLabel.text = "AD"
