@@ -22,6 +22,9 @@ class MagazineTableViewController: UITableViewController {
         self.navigationItem.largeTitleDisplayMode = .inline
         
         self.tableView.separatorStyle = .none
+        
+        let xib = UINib(nibName: "MagazineTableViewCell", bundle: nil)
+        tableView.register(xib, forCellReuseIdentifier: "MagazineTableViewCell")
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -30,7 +33,7 @@ class MagazineTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(
-            withIdentifier: "magazineTableViewCell",
+            withIdentifier: "MagazineTableViewCell",
             for: indexPath
         ) as? MagazineTableViewCell else {
             return UITableViewCell()
