@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MagazineTableViewCell" rowHeight="479" id="4sC-XB-Hdf" customClass="MagazineTableViewCell" customModule="Tripple" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="479"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4sC-XB-Hdf" id="0r9-bI-Ti3">
+                <rect key="frame" x="0.0" y="0.0" width="393" height="479"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="efY-mF-Zwh">
+                        <rect key="frame" x="16" y="16" width="361" height="361"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="efY-mF-Zwh" secondAttribute="height" id="Py5-ls-W4W"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pNG-RG-7m6">
+                        <rect key="frame" x="16" y="393" width="361" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aik-Xa-q0P">
+                        <rect key="frame" x="16" y="419" width="361" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bNG-qG-JCr">
+                        <rect key="frame" x="16" y="442" width="361" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="efY-mF-Zwh" firstAttribute="top" secondItem="0r9-bI-Ti3" secondAttribute="top" constant="16" id="3d7-Lf-oEt"/>
+                    <constraint firstItem="Aik-Xa-q0P" firstAttribute="leading" secondItem="0r9-bI-Ti3" secondAttribute="leading" constant="16" id="4ff-Lu-3WI"/>
+                    <constraint firstAttribute="trailing" secondItem="Aik-Xa-q0P" secondAttribute="trailing" constant="16" id="CM6-UF-h74"/>
+                    <constraint firstItem="bNG-qG-JCr" firstAttribute="leading" secondItem="0r9-bI-Ti3" secondAttribute="leading" constant="16" id="Ewj-FP-y6G"/>
+                    <constraint firstItem="bNG-qG-JCr" firstAttribute="top" secondItem="Aik-Xa-q0P" secondAttribute="bottom" constant="2" id="IGy-iE-IqL"/>
+                    <constraint firstAttribute="trailing" secondItem="bNG-qG-JCr" secondAttribute="trailing" constant="16" id="Kse-7q-m6X"/>
+                    <constraint firstItem="pNG-RG-7m6" firstAttribute="leading" secondItem="0r9-bI-Ti3" secondAttribute="leading" constant="16" id="P1X-1k-IeJ"/>
+                    <constraint firstItem="Aik-Xa-q0P" firstAttribute="top" secondItem="pNG-RG-7m6" secondAttribute="bottom" constant="5" id="Qo4-sj-yLb"/>
+                    <constraint firstItem="pNG-RG-7m6" firstAttribute="top" secondItem="efY-mF-Zwh" secondAttribute="bottom" constant="16" id="TfZ-AV-ONB"/>
+                    <constraint firstItem="efY-mF-Zwh" firstAttribute="leading" secondItem="0r9-bI-Ti3" secondAttribute="leading" constant="16" id="UWg-HM-3TA"/>
+                    <constraint firstAttribute="trailing" secondItem="efY-mF-Zwh" secondAttribute="trailing" constant="16" id="qYI-BG-fSg"/>
+                    <constraint firstAttribute="trailing" secondItem="pNG-RG-7m6" secondAttribute="trailing" constant="16" id="v9k-wE-PGk"/>
+                    <constraint firstAttribute="bottom" secondItem="bNG-qG-JCr" secondAttribute="bottom" constant="16" id="zO1-1Q-OXv"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="magazineContentLabel" destination="Aik-Xa-q0P" id="jMU-qS-YaV"/>
+                <outlet property="magazineDateLabel" destination="bNG-qG-JCr" id="sCg-g3-Hwc"/>
+                <outlet property="magazineTitleLabel" destination="pNG-RG-7m6" id="agU-Qc-g1B"/>
+                <outlet property="posterImageView" destination="efY-mF-Zwh" id="SQa-rD-C51"/>
+            </connections>
+            <point key="canvasLocation" x="107.63358778625954" y="-5.9859154929577469"/>
+        </tableViewCell>
+    </objects>
+</document>
