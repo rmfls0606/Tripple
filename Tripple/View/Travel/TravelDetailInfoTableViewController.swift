@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Toast
 
 enum AdColor: CaseIterable{
     case pink, green
@@ -83,6 +84,19 @@ class TravelDetailInfoTableViewController: UITableViewController {
             return 160
         }else{
             return 80
+        }
+    }
+    
+    override func tableView(
+        _ tableView: UITableView,
+        didSelectRowAt indexPath: IndexPath
+    ) {
+        if travelInfoData[indexPath.row].ad{
+            self.view.makeToast(
+                    "해당 셀은 광고 셀입니다.",
+                    duration: 2,
+                    position: ToastPosition.bottom
+                )
         }
     }
     
