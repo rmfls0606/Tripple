@@ -37,6 +37,8 @@ class CityInfoTableViewCell: UITableViewCell {
         cityExplainLabel.textAlignment = .left
         cityExplainLabel.textColor = .white
         cityExplainLabel.font = .systemFont(ofSize: 14)
+        
+        selectionStyle = .none
     }
     
     func configure(city: City){
