@@ -326,7 +326,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HtE-B8-DSc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2788.5496183206105" y="1507.7464788732395"/>
+            <point key="canvasLocation" x="2947" y="1258"/>
         </scene>
         <!--Travel Detail Info Table View Controller-->
         <scene sceneID="ceW-c7-pD1">
@@ -496,6 +496,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UBJ-0q-Vnj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1914" y="2221"/>
+        </scene>
+        <!--Travel Ad Detail View Controller-->
+        <scene sceneID="EYe-WM-XtU">
+            <objects>
+                <viewController storyboardIdentifier="TravelAdDetailViewController" id="LvO-0Y-vCq" customClass="TravelAdDetailViewController" customModule="Tripple" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uPC-rm-FPz">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pvX-OD-btp">
+                                <rect key="frame" x="16" y="134" width="361" height="634"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="FBl-5x-Pul"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="pvX-OD-btp" firstAttribute="top" secondItem="FBl-5x-Pul" secondAttribute="top" constant="16" id="7cD-By-Y2c"/>
+                            <constraint firstItem="FBl-5x-Pul" firstAttribute="bottom" secondItem="pvX-OD-btp" secondAttribute="bottom" constant="16" id="b4P-q0-wPT"/>
+                            <constraint firstItem="pvX-OD-btp" firstAttribute="leading" secondItem="FBl-5x-Pul" secondAttribute="leading" constant="16" id="ezW-l0-Sxq"/>
+                            <constraint firstItem="FBl-5x-Pul" firstAttribute="trailing" secondItem="pvX-OD-btp" secondAttribute="trailing" constant="16" id="zqh-aY-D5G"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="adTextLabel" destination="pvX-OD-btp" id="HWy-gg-me4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wGo-Xv-5mO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2946" y="1958"/>
         </scene>
     </scenes>
     <resources>
