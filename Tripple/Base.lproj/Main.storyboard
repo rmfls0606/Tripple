@@ -264,6 +264,67 @@
             </objects>
             <point key="canvasLocation" x="1914" y="1508"/>
         </scene>
+        <!--Travel Detail View Controller-->
+        <scene sceneID="rDM-6r-ctA">
+            <objects>
+                <viewController storyboardIdentifier="TravelDetailViewController" id="Jp8-zU-It4" customClass="TravelDetailViewController" customModule="Tripple" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="c4g-ke-7Vv">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oIT-X9-N5o">
+                                <rect key="frame" x="16" y="134" width="361" height="361"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="oIT-X9-N5o" secondAttribute="height" id="bCa-TU-jMs"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YcG-l5-CeZ">
+                                <rect key="frame" x="16" y="511" width="361" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CXb-5T-xIC">
+                                <rect key="frame" x="16" y="537" width="361" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4wA-dI-4eb">
+                                <rect key="frame" x="159" y="574" width="75" height="34.333333333333371"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ule-Tu-c26"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ule-Tu-c26" firstAttribute="trailing" secondItem="YcG-l5-CeZ" secondAttribute="trailing" constant="16" id="0MV-G1-8gE"/>
+                            <constraint firstItem="ule-Tu-c26" firstAttribute="trailing" secondItem="oIT-X9-N5o" secondAttribute="trailing" constant="16" id="6ww-7O-GZW"/>
+                            <constraint firstItem="oIT-X9-N5o" firstAttribute="leading" secondItem="ule-Tu-c26" secondAttribute="leading" constant="16" id="73r-Ot-mIb"/>
+                            <constraint firstItem="YcG-l5-CeZ" firstAttribute="top" secondItem="oIT-X9-N5o" secondAttribute="bottom" constant="16" id="9tX-Ed-WiX"/>
+                            <constraint firstItem="ule-Tu-c26" firstAttribute="trailing" secondItem="CXb-5T-xIC" secondAttribute="trailing" constant="16" id="ACr-tx-jn0"/>
+                            <constraint firstItem="CXb-5T-xIC" firstAttribute="top" secondItem="YcG-l5-CeZ" secondAttribute="bottom" constant="5" id="DF0-UH-VWD"/>
+                            <constraint firstItem="ule-Tu-c26" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="4wA-dI-4eb" secondAttribute="bottom" constant="16" id="MEp-34-n3t"/>
+                            <constraint firstItem="YcG-l5-CeZ" firstAttribute="leading" secondItem="ule-Tu-c26" secondAttribute="leading" constant="16" id="Pha-Cv-3aK"/>
+                            <constraint firstItem="4wA-dI-4eb" firstAttribute="top" secondItem="CXb-5T-xIC" secondAttribute="bottom" constant="16" id="pab-2I-Hwy"/>
+                            <constraint firstItem="oIT-X9-N5o" firstAttribute="top" secondItem="ule-Tu-c26" secondAttribute="top" constant="16" id="uJQ-UG-xcn"/>
+                            <constraint firstItem="CXb-5T-xIC" firstAttribute="leading" secondItem="ule-Tu-c26" secondAttribute="leading" constant="16" id="vFt-uJ-TaN"/>
+                            <constraint firstItem="4wA-dI-4eb" firstAttribute="centerX" secondItem="c4g-ke-7Vv" secondAttribute="centerX" id="xXp-yS-HxI"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cityImageView" destination="oIT-X9-N5o" id="4fw-bW-TPA"/>
+                        <outlet property="descriptionLabel" destination="CXb-5T-xIC" id="SG2-bx-fbX"/>
+                        <outlet property="morecityButton" destination="4wA-dI-4eb" id="mfe-UN-FxZ"/>
+                        <outlet property="titleLabel" destination="YcG-l5-CeZ" id="Uw4-PD-IwG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HtE-B8-DSc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2788.5496183206105" y="1507.7464788732395"/>
+        </scene>
         <!--Travel Detail Info Table View Controller-->
         <scene sceneID="ceW-c7-pD1">
             <objects>
@@ -431,7 +492,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UBJ-0q-Vnj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2746" y="1508"/>
+            <point key="canvasLocation" x="1914" y="2221"/>
         </scene>
     </scenes>
     <resources>
