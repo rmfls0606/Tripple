@@ -22,6 +22,12 @@ class TravelAdDetailViewController: UIViewController {
     func configure(){
         navigationItem.title = "광고 화면"
         navigationItem.largeTitleDisplayMode = .inline
+        navigationItem.leftBarButtonItem = UIBarButtonItem(
+            image: UIImage(systemName: "xmark")?.withTintColor(.black, renderingMode: .alwaysOriginal),
+            style: .done,
+            target: self,
+            action: nil
+        )
         
         adTextLabel.text = adText ?? "광고 내용이 존재하지 않습니다."
         adTextLabel.textAlignment = .center
