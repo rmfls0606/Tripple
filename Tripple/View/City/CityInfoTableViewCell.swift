@@ -15,6 +15,7 @@ class CityInfoTableViewCell: UITableViewCell {
     @IBOutlet weak var cityNameLabel: UILabel!
     @IBOutlet weak var cityImageView: UIImageView!
     @IBOutlet weak var cityExplainLabel: UILabel!
+    @IBOutlet weak var explainPaddingView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,9 +26,10 @@ class CityInfoTableViewCell: UITableViewCell {
         
         cityImageView.contentMode = .scaleAspectFill
         
+        explainPaddingView.backgroundColor = .black
+        explainPaddingView.layer.opacity = 0.7
+        
         cityExplainLabel.textAlignment = .left
-        cityExplainLabel.backgroundColor = .black
-        cityExplainLabel.layer.opacity = 0.7
         cityExplainLabel.textColor = .white
         cityExplainLabel.font = .systemFont(ofSize: 14)
     }
