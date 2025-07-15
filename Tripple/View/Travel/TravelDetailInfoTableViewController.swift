@@ -85,11 +85,26 @@ class TravelDetailInfoTableViewController: UITableViewController {
         _ tableView: UITableView,
         didSelectRowAt indexPath: IndexPath
     ) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
         if travelInfoData[indexPath.row].ad{
             self.navigationController?.view.makeToast(
-                    "해당 셀은 광고 셀입니다.",
-                    duration: 2,
-                    position: ToastPosition.bottom
+                "해당 셀은 광고 셀입니다.",
+                duration: 2,
+                position: ToastPosition.bottom
+            )
+        }else{
+            guard let viewController = storyboard.instantiateViewController(
+                withIdentifier: "TravelDetailViewController"
+            ) as? TravelDetailViewController else {
+                return
+            }
+            viewController.city = travelInfoData[indexPath.row]
+            
+            self.navigationController?
+                .pushViewController(
+                    viewController,
+                    animated: true
                 )
         }
     }
