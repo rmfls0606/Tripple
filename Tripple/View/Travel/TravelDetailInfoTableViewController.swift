@@ -88,11 +88,12 @@ class TravelDetailInfoTableViewController: UITableViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
         if travelInfoData[indexPath.row].ad{
-            self.navigationController?.view.makeToast(
-                "해당 셀은 광고 셀입니다.",
-                duration: 2,
-                position: ToastPosition.bottom
-            )
+            guard let viewController = storyboard.instantiateViewController(
+                withIdentifier: "TravelAdDetailViewController"
+            ) as? TravelAdDetailViewController else { return }
+            viewController.adText = travelInfoData[indexPath.row].title
+            viewController.modalPresentationStyle = .fullScreen
+            present(viewController, animated: true)
         }else{
             guard let viewController = storyboard.instantiateViewController(
                 withIdentifier: "TravelDetailViewController"
