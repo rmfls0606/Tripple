@@ -317,7 +317,7 @@
                     <connections>
                         <outlet property="cityImageView" destination="oIT-X9-N5o" id="4fw-bW-TPA"/>
                         <outlet property="descriptionLabel" destination="CXb-5T-xIC" id="SG2-bx-fbX"/>
-                        <outlet property="morecityButton" destination="4wA-dI-4eb" id="mfe-UN-FxZ"/>
+                        <outlet property="moreCityButton" destination="4wA-dI-4eb" id="mfe-UN-FxZ"/>
                         <outlet property="titleLabel" destination="YcG-l5-CeZ" id="Uw4-PD-IwG"/>
                     </connections>
                 </viewController>

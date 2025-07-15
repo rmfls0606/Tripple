@@ -13,7 +13,7 @@ class TravelDetailViewController: UIViewController {
     @IBOutlet weak var cityImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var morecityButton: UIButton!
+    @IBOutlet weak var moreCityButton: UIButton!
     
     var city: Travel?
     
@@ -56,7 +56,6 @@ class TravelDetailViewController: UIViewController {
         config.cornerStyle = .capsule
         config.titlePadding = 50
         
-        morecityButton.configuration = config
-        
+        moreCityButton.configuration = config
     }
 }
