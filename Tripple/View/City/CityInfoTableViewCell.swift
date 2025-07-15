@@ -40,7 +40,7 @@ class CityInfoTableViewCell: UITableViewCell {
         }else{
             cityImageView.backgroundColor = .systemGray4
         }
-        cityNameLabel.text = city.city_name
+        cityNameLabel.text = city.city_name + " | " + city.city_english_name
         cityExplainLabel.text = city.city_explain
     }
 }
