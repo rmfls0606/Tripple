@@ -10,6 +10,7 @@ import UIKit
 class CityInfoTableViewController: UITableViewController {
 
     let cityInfoData: [City] = CityInfo().city
+    var filterData: [City] = CityInfo().city
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +27,7 @@ class CityInfoTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cityInfoData.count
+        return filterData.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -34,7 +35,7 @@ class CityInfoTableViewController: UITableViewController {
             return UITableViewCell()
         }
         
-        let city = cityInfoData[indexPath.row]
+        let city = filterData[indexPath.row]
         cell.configure(city: city)
         
         return cell
@@ -43,4 +44,18 @@ class CityInfoTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
+    
+    
+    @IBAction func segmentedControlChanged(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex{
+        case 0:
+            filterData = cityInfoData
+        case 1:
+            filterData = cityInfoData.filter{$0.domestic_travel}
+        default:
+            filterData = cityInfoData.filter{!$0.domestic_travel}
+        }
+        tableView.reloadData()
+    }
+    
 }

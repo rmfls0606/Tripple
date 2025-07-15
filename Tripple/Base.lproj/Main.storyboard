@@ -528,6 +528,9 @@
                                         <segment title="국내"/>
                                         <segment title="해외"/>
                                     </segments>
+                                    <connections>
+                                        <action selector="segmentedControlChanged:" destination="zUW-yp-Rbd" eventType="valueChanged" id="gxC-RE-J5V"/>
+                                    </connections>
                                 </segmentedControl>
                             </subviews>
                             <constraints>
