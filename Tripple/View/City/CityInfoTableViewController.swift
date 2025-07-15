@@ -9,6 +9,8 @@ import UIKit
 
 class CityInfoTableViewController: UITableViewController {
 
+    @IBOutlet weak var cityInputTextField: UITextField!
+    
     let cityInfoData: [City] = CityInfo().city
     var filterData: [City] = CityInfo().city
     
@@ -24,6 +26,8 @@ class CityInfoTableViewController: UITableViewController {
         
         let xib = UINib(nibName: CityInfoTableViewCell.identifier, bundle: nil)
         tableView.register(xib, forCellReuseIdentifier: CityInfoTableViewCell.identifier)
+        
+        cityInputTextField.placeholder = "도시를 검색해주세요..."
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

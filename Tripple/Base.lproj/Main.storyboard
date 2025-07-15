@@ -559,6 +559,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="D6c-On-gex"/>
+                    <connections>
+                        <outlet property="cityInputTextField" destination="rvZ-Z3-wQr" id="ttS-we-CUe"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bzk-8x-aKo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
