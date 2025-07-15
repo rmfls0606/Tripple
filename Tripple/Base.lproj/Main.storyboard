@@ -524,8 +524,9 @@
                                         <constraint firstAttribute="height" constant="24" id="bgL-yf-MVi"/>
                                     </constraints>
                                     <segments>
-                                        <segment title="First"/>
-                                        <segment title="Second"/>
+                                        <segment title="모두"/>
+                                        <segment title="국내"/>
+                                        <segment title="해외"/>
                                     </segments>
                                 </segmentedControl>
                             </subviews>
