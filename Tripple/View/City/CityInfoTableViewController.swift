@@ -34,6 +34,9 @@ class CityInfoTableViewController: UITableViewController {
             return UITableViewCell()
         }
         
+        let city = cityInfoData[indexPath.row]
+        cell.configure(city: city)
+        
         return cell
     }
     
