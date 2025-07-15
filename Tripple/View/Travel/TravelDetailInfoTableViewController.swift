@@ -92,8 +92,11 @@ class TravelDetailInfoTableViewController: UITableViewController {
                 withIdentifier: "TravelAdDetailViewController"
             ) as? TravelAdDetailViewController else { return }
             viewController.adText = travelInfoData[indexPath.row].title
-            viewController.modalPresentationStyle = .fullScreen
-            present(viewController, animated: true)
+            
+            let nav = UINavigationController(rootViewController: viewController)
+            nav.modalPresentationStyle = .fullScreen
+            
+            present(nav, animated: true)
         }else{
             guard let viewController = storyboard.instantiateViewController(
                 withIdentifier: "TravelDetailViewController"
