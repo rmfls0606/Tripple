@@ -75,6 +75,7 @@
             <connections>
                 <outlet property="cityExplainLabel" destination="74n-Hl-iwQ" id="Smg-Q9-hi0"/>
                 <outlet property="cityImageView" destination="cpl-Rr-lX4" id="aEL-2B-7fm"/>
+                <outlet property="cityInfoView" destination="QSU-tX-MeU" id="4hu-Li-Ulj"/>
                 <outlet property="cityNameLabel" destination="dxp-Jd-7Co" id="yIs-mt-CfV"/>
                 <outlet property="explainPaddingView" destination="Jdv-Rt-EfL" id="MQA-6j-ybj"/>
             </connections>

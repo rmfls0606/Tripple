@@ -12,6 +12,7 @@ class CityInfoTableViewCell: UITableViewCell {
 
     static let identifier = "CityInfoTableViewCell"
     
+    @IBOutlet weak var cityInfoView: UIView!
     @IBOutlet weak var cityNameLabel: UILabel!
     @IBOutlet weak var cityImageView: UIImageView!
     @IBOutlet weak var cityExplainLabel: UILabel!
@@ -19,6 +20,10 @@ class CityInfoTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        cityInfoView.clipsToBounds = true
+        cityInfoView.layer.cornerRadius = cityInfoView.bounds.height / 4
+        cityInfoView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMaxYCorner]
         
         cityNameLabel.textAlignment = .right
         cityNameLabel.font = .systemFont(ofSize: 16, weight: .bold)
