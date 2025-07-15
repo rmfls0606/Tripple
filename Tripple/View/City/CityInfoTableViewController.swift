@@ -11,8 +11,9 @@ class CityInfoTableViewController: UITableViewController {
 
     @IBOutlet weak var cityInputTextField: UITextField!
     
-    let cityInfoData: [City] = CityInfo().city
+    var cityInfoData: [City] = CityInfo().city
     var filterData: [City] = CityInfo().city
+    var cachedData: [City] = CityInfo().city
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,17 +50,44 @@ class CityInfoTableViewController: UITableViewController {
         return UITableView.automaticDimension
     }
     
-    
     @IBAction func segmentedControlChanged(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex{
         case 0:
             filterData = cityInfoData
+            cachedData = cityInfoData
         case 1:
             filterData = cityInfoData.filter{$0.domestic_travel}
+            cachedData = cityInfoData.filter{$0.domestic_travel}
         default:
             filterData = cityInfoData.filter{!$0.domestic_travel}
+            cachedData = cityInfoData.filter{!$0.domestic_travel}
         }
         tableView.reloadData()
     }
     
+    
+    @IBAction func cityInputTextFieldReturn(_ sender: UITextField) {
+        guard let text = sender.text, !text.trimmingCharacters(in: .whitespaces).isEmpty else {
+            filterData = cachedData
+            tableView.reloadData()
+            return
+        }
+        
+        filterData = cachedData.filter{ $0.city_name == text || $0.city_english_name.lowercased() == text.lowercased()}
+        
+        tableView.reloadData()
+    }
+    
+    @IBAction func cityInputTextFieldChanged(_ sender: UITextField) {
+        guard let text = sender.text, !text.trimmingCharacters(in: .whitespaces).isEmpty else {
+            filterData = cachedData
+            tableView.reloadData()
+            return
+        }
+        
+        filterData = cachedData.filter{ $0.city_name.contains(text) || $0.city_english_name.lowercased().contains(text)}
+        print(filterData.map{$0.city_name})
+        tableView.reloadData()
+    }
+
 }

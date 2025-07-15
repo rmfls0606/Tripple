@@ -517,6 +517,10 @@
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <action selector="cityInputTextFieldChanged:" destination="zUW-yp-Rbd" eventType="editingChanged" id="VT2-mC-EOe"/>
+                                        <action selector="cityInputTextFieldReturn:" destination="zUW-yp-Rbd" eventType="editingDidEndOnExit" id="M6N-Tf-1BB"/>
+                                    </connections>
                                 </textField>
                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="FI8-7j-huC">
                                     <rect key="frame" x="16" y="53" width="361" height="25"/>
