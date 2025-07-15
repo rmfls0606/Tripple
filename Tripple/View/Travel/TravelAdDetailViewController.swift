@@ -26,11 +26,16 @@ class TravelAdDetailViewController: UIViewController {
             image: UIImage(systemName: "xmark")?.withTintColor(.black, renderingMode: .alwaysOriginal),
             style: .done,
             target: self,
-            action: nil
+            action: #selector(dismissButtonClicked)
         )
         
         adTextLabel.text = adText ?? "광고 내용이 존재하지 않습니다."
         adTextLabel.textAlignment = .center
         adTextLabel.font = .systemFont(ofSize: 20, weight: .semibold)
+    }
+    
+    @objc
+    private func dismissButtonClicked(){
+        dismiss(animated: true)
     }
 }
