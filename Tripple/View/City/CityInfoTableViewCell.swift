@@ -20,12 +20,16 @@ class CityInfoTableViewCell: UITableViewCell {
         super.awakeFromNib()
         
         cityNameLabel.textAlignment = .right
+        cityNameLabel.font = .systemFont(ofSize: 16, weight: .bold)
+        cityNameLabel.textColor = .white
         
         cityImageView.contentMode = .scaleAspectFill
         
-        cityExplainLabel.textAlignment = .center
-        cityExplainLabel.backgroundColor = .gray
-        cityExplainLabel.layer.opacity = 0.3
+        cityExplainLabel.textAlignment = .left
+        cityExplainLabel.backgroundColor = .black
+        cityExplainLabel.layer.opacity = 0.7
+        cityExplainLabel.textColor = .white
+        cityExplainLabel.font = .systemFont(ofSize: 14)
     }
     
     func configure(city: City){
