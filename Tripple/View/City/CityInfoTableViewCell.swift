@@ -8,6 +8,8 @@
 import UIKit
 
 class CityInfoTableViewCell: UITableViewCell {
+
+    static let identifier = "CityInfoTableViewCell"
     
     @IBOutlet weak var cityNameLabel: UILabel!
     @IBOutlet weak var cityImageView: UIImageView!
@@ -16,5 +18,12 @@ class CityInfoTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        cityNameLabel.textAlignment = .right
+        
+        cityImageView.contentMode = .scaleAspectFill
+        
+        cityExplainLabel.textAlignment = .center
+        cityExplainLabel.backgroundColor = .black
+        cityExplainLabel.layer.opacity = 0.3
     }
 }
