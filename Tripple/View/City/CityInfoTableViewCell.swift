@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class CityInfoTableViewCell: UITableViewCell {
 
@@ -23,7 +24,17 @@ class CityInfoTableViewCell: UITableViewCell {
         cityImageView.contentMode = .scaleAspectFill
         
         cityExplainLabel.textAlignment = .center
-        cityExplainLabel.backgroundColor = .black
+        cityExplainLabel.backgroundColor = .gray
         cityExplainLabel.layer.opacity = 0.3
+    }
+    
+    func configure(city: City){
+        if let image_url = URL(string: city.city_image){
+            cityImageView.kf.setImage(with: image_url)
+        }else{
+            cityImageView.backgroundColor = .systemGray4
+        }
+        cityNameLabel.text = city.city_name
+        cityExplainLabel.text = city.city_explain
     }
 }
