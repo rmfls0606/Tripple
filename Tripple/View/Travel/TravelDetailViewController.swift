@@ -58,4 +58,8 @@ class TravelDetailViewController: UIViewController {
         
         moreCityButton.configuration = config
     }
+    
+    @IBAction func moreCityButtonClicked(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
+    }
 }
