@@ -14,5 +14,8 @@ class CityInfoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.title = "인기 도시"
+        navigationItem.largeTitleDisplayMode = .inline
     }
 }

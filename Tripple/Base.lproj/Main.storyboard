@@ -569,7 +569,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bzk-8x-aKo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1913.740458015267" y="2931.6901408450703"/>
+            <point key="canvasLocation" x="1914" y="3652"/>
         </scene>
         <!--City Info View Controller-->
         <scene sceneID="Sox-pl-cuY">
@@ -580,7 +580,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s5n-RT-yl1">
-                                <rect key="frame" x="16" y="134" width="361" height="34"/>
+                                <rect key="frame" x="16" y="178" width="361" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="7AM-0t-GJB"/>
                                 </constraints>
@@ -588,7 +588,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="8rX-K8-rnD">
-                                <rect key="frame" x="16" y="176" width="361" height="32"/>
+                                <rect key="frame" x="16" y="220" width="361" height="32"/>
                                 <segments>
                                     <segment title="모두"/>
                                     <segment title="국내"/>
@@ -596,7 +596,7 @@
                                 </segments>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="fui-w8-HQY">
-                                <rect key="frame" x="0.0" y="215" width="393" height="569"/>
+                                <rect key="frame" x="0.0" y="259" width="393" height="476"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -615,6 +615,7 @@
                             <constraint firstItem="fui-w8-HQY" firstAttribute="leading" secondItem="5YS-uz-Q7S" secondAttribute="leading" id="i3f-Ag-Uck"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="J1r-ZB-B2H"/>
                     <connections>
                         <outlet property="cityInfoTableView" destination="fui-w8-HQY" id="TNk-lq-me4"/>
                         <outlet property="cityInputTextField" destination="s5n-RT-yl1" id="1cD-Mj-jlU"/>
@@ -622,7 +623,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dVV-G8-TiL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1914" y="3599"/>
+            <point key="canvasLocation" x="1914" y="2932"/>
         </scene>
         <!--City Info Detail View Controller-->
         <scene sceneID="fmQ-71-6iI">
@@ -740,7 +741,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="zUW-yp-Rbd" kind="relationship" relationship="rootViewController" id="IZg-q2-Tjf"/>
+                        <segue destination="dCk-MO-m7I" kind="relationship" relationship="rootViewController" id="lSL-BU-T6V"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fga-oZ-Gf1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
