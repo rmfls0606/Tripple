@@ -53,6 +53,8 @@ class CityInfoTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let viewController = storyboard?.instantiateViewController(identifier: "CityInfoDetailViewController") as? CityInfoDetailViewController else{ return }
         
+        viewController.city = cityInfoData[indexPath.row]
+        
         present(viewController, animated: true)
     }
     
