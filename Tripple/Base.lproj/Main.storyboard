@@ -571,10 +571,10 @@
             </objects>
             <point key="canvasLocation" x="1913.740458015267" y="2931.6901408450703"/>
         </scene>
-        <!--View Controller-->
+        <!--City Info Detail View Controller-->
         <scene sceneID="fmQ-71-6iI">
             <objects>
-                <viewController id="oiY-ik-enX" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CityInfoDetailViewController" id="oiY-ik-enX" customClass="CityInfoDetailViewController" customModule="Tripple" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nek-4e-shW">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -604,7 +604,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gec-O7-voc">
-                                <rect key="frame" x="16" y="364.33333333333331" width="361" height="21"/>
+                                <rect key="frame" x="16" y="364.33333333333331" width="361" height="20.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -631,6 +631,13 @@
                             <constraint firstItem="02X-5e-bTT" firstAttribute="trailing" secondItem="XMx-Cu-raD" secondAttribute="trailing" constant="16" id="zvP-Ff-jii"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cityCountryLabel" destination="6QG-vd-5Bb" id="1Yx-et-Zli"/>
+                        <outlet property="cityEnglishNameLabel" destination="XMx-Cu-raD" id="DAr-Ne-Gsx"/>
+                        <outlet property="cityExplainLabel" destination="Gec-O7-voc" id="fgE-m3-MJX"/>
+                        <outlet property="cityImageView" destination="sp0-0Q-ada" id="qQW-mj-e5K"/>
+                        <outlet property="cityNameLabel" destination="IbX-M7-hDp" id="0nV-48-2fY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="553-fK-Jh4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
