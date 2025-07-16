@@ -571,10 +571,10 @@
             </objects>
             <point key="canvasLocation" x="1913.740458015267" y="2931.6901408450703"/>
         </scene>
-        <!--View Controller-->
+        <!--City Info View Controller-->
         <scene sceneID="Sox-pl-cuY">
             <objects>
-                <viewController id="dCk-MO-m7I" sceneMemberID="viewController">
+                <viewController id="dCk-MO-m7I" customClass="CityInfoViewController" customModule="Tripple" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="I42-Qn-ZQj">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -615,6 +615,10 @@
                             <constraint firstItem="fui-w8-HQY" firstAttribute="leading" secondItem="5YS-uz-Q7S" secondAttribute="leading" id="i3f-Ag-Uck"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cityInfoTableView" destination="fui-w8-HQY" id="TNk-lq-me4"/>
+                        <outlet property="cityInputTextField" destination="s5n-RT-yl1" id="1cD-Mj-jlU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dVV-G8-TiL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
