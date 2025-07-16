@@ -50,6 +50,12 @@ class CityInfoTableViewController: UITableViewController {
         return UITableView.automaticDimension
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let viewController = storyboard?.instantiateViewController(identifier: "CityInfoDetailViewController") as? CityInfoDetailViewController else{ return }
+        
+        present(viewController, animated: true)
+    }
+    
     @IBAction func segmentedControlChanged(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex{
         case 0:
