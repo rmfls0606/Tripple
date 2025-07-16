@@ -571,6 +571,55 @@
             </objects>
             <point key="canvasLocation" x="1913.740458015267" y="2931.6901408450703"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="Sox-pl-cuY">
+            <objects>
+                <viewController id="dCk-MO-m7I" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="I42-Qn-ZQj">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s5n-RT-yl1">
+                                <rect key="frame" x="16" y="134" width="361" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="7AM-0t-GJB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="8rX-K8-rnD">
+                                <rect key="frame" x="16" y="176" width="361" height="32"/>
+                                <segments>
+                                    <segment title="모두"/>
+                                    <segment title="국내"/>
+                                    <segment title="해외"/>
+                                </segments>
+                            </segmentedControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="fui-w8-HQY">
+                                <rect key="frame" x="0.0" y="215" width="393" height="569"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="5YS-uz-Q7S"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="8rX-K8-rnD" firstAttribute="top" secondItem="s5n-RT-yl1" secondAttribute="bottom" constant="8" id="AHb-Am-yR4"/>
+                            <constraint firstItem="5YS-uz-Q7S" firstAttribute="trailing" secondItem="s5n-RT-yl1" secondAttribute="trailing" constant="16" id="BHe-nq-0mC"/>
+                            <constraint firstItem="fui-w8-HQY" firstAttribute="top" secondItem="8rX-K8-rnD" secondAttribute="bottom" constant="8" id="Ebm-EH-OPL"/>
+                            <constraint firstItem="s5n-RT-yl1" firstAttribute="leading" secondItem="5YS-uz-Q7S" secondAttribute="leading" constant="16" id="Hi4-1h-jTQ"/>
+                            <constraint firstItem="5YS-uz-Q7S" firstAttribute="trailing" secondItem="fui-w8-HQY" secondAttribute="trailing" id="Iag-hs-ccI"/>
+                            <constraint firstItem="s5n-RT-yl1" firstAttribute="top" secondItem="5YS-uz-Q7S" secondAttribute="top" constant="16" id="Lz1-Qs-7jd"/>
+                            <constraint firstItem="8rX-K8-rnD" firstAttribute="leading" secondItem="5YS-uz-Q7S" secondAttribute="leading" constant="16" id="T4v-qD-q6p"/>
+                            <constraint firstItem="5YS-uz-Q7S" firstAttribute="bottom" secondItem="fui-w8-HQY" secondAttribute="bottom" id="eby-TV-67v"/>
+                            <constraint firstItem="5YS-uz-Q7S" firstAttribute="trailing" secondItem="8rX-K8-rnD" secondAttribute="trailing" constant="16" id="etm-ui-kXK"/>
+                            <constraint firstItem="fui-w8-HQY" firstAttribute="leading" secondItem="5YS-uz-Q7S" secondAttribute="leading" id="i3f-Ag-Uck"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dVV-G8-TiL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1914" y="3599"/>
+        </scene>
         <!--City Info Detail View Controller-->
         <scene sceneID="fmQ-71-6iI">
             <objects>
