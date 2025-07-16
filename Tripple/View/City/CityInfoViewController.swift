@@ -28,6 +28,8 @@ class CityInfoViewController: UIViewController, UITableViewDelegate, UITableView
         navigationItem.title = "인기 도시"
         navigationItem.largeTitleDisplayMode = .inline
         
+        cityInputTextField.placeholder = "도시를 검색해주세요..."
+        
         let xib = UINib(nibName: "CityInfoTableViewCell", bundle: nil)
         cityInfoTableView.register(xib, forCellReuseIdentifier: CityInfoTableViewCell.identifier)
         cityInfoTableView.delegate = self
