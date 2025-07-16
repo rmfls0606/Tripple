@@ -41,13 +41,16 @@ class CityInfoTableViewCell: UITableViewCell {
         selectionStyle = .none
     }
     
-    func configure(city: City){
+    func configure(city: City, targetText: String){
         if let image_url = URL(string: city.city_image){
             cityImageView.kf.setImage(with: image_url)
         }else{
             cityImageView.backgroundColor = .systemGray4
         }
         cityNameLabel.text = city.city_name + " | " + city.city_english_name
+        cityNameLabel.asColr(targetString: targetText)
+        
         cityExplainLabel.text = city.city_explain
+        cityExplainLabel.asColr(targetString: targetText)
     }
 }

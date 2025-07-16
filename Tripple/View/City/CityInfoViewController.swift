@@ -12,6 +12,7 @@ class CityInfoViewController: UIViewController, UITableViewDelegate, UITableView
     let cityInfoData: [City] = CityInfo().city
     var filterData: [City] = CityInfo().city
     var cachedData: [City] = CityInfo().city
+    var inputText: String = ""
     
     @IBOutlet var cityInputTextField: UITextField!
     @IBOutlet var cityInfoTableView: UITableView!
@@ -43,7 +44,7 @@ class CityInfoViewController: UIViewController, UITableViewDelegate, UITableView
         }
         
         let city = filterData[indexPath.row]
-        cell.configure(city: city)
+        cell.configure(city: city, targetText: inputText)
         
         return cell
     }
@@ -79,11 +80,13 @@ class CityInfoViewController: UIViewController, UITableViewDelegate, UITableView
     
     @IBAction func cityInputTextFieldReturn(_ sender: UITextField) {
         guard let text = sender.text, !text.trimmingCharacters(in: .whitespaces).isEmpty else {
+            inputText = ""
             filterData = cachedData
             cityInfoTableView.reloadData()
             return
         }
         
+        inputText = text
         filterData = cachedData.filter{ $0.city_name == text || $0.city_english_name.lowercased() == text.lowercased()}
         
         cityInfoTableView.reloadData()
@@ -92,13 +95,15 @@ class CityInfoViewController: UIViewController, UITableViewDelegate, UITableView
     
     @IBAction func cityInputTextFieldChanged(_ sender: UITextField) {
         guard let text = sender.text, !text.trimmingCharacters(in: .whitespaces).isEmpty else {
+            inputText = ""
             filterData = cachedData
             cityInfoTableView.reloadData()
             return
         }
         
+        inputText = text
         filterData = cachedData.filter{ $0.city_name.contains(text) || $0.city_english_name.lowercased().contains(text)}
-        print(filterData.map{$0.city_name})
+
         cityInfoTableView.reloadData()
     }
 }
