@@ -633,6 +633,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Dx1-IM-PJK"/>
+                    <connections>
+                        <outlet property="cityInfoCollectionView" destination="Qn8-Lv-y1I" id="x0I-0u-rLy"/>
+                        <outlet property="cityInputTextField" destination="fVD-GQ-Qh6" id="ctz-He-ahu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P1R-Hp-tG9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

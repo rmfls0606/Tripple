@@ -9,6 +9,9 @@ import UIKit
 
 class CityInfoCollectionViewController: UIViewController {
 
+    @IBOutlet var cityInputTextField: UITextField!
+    @IBOutlet var cityInfoCollectionView: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,5 +21,7 @@ class CityInfoCollectionViewController: UIViewController {
     func configure(){
         navigationItem.title = "인기 도시"
         navigationItem.largeTitleDisplayMode = .inline
+        
+        cityInputTextField.placeholder = "도시를 입력해주세요..."
     }
 }
