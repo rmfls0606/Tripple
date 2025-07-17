@@ -72,6 +72,18 @@ class CityInfoCollectionViewController: UIViewController, UICollectionViewDelega
         return cell
     }
     
+    func collectionView(
+        _ collectionView: UICollectionView,
+        didSelectItemAt indexPath: IndexPath
+    ) {
+        guard let vc = storyboard?.instantiateViewController(
+            withIdentifier: "CityInfoDetailViewController"
+        ) as? CityInfoDetailViewController else { return }
+        
+        vc.city = cityInfoData[indexPath.item]
+        present(vc, animated: true)
+    }
+    
     @IBAction func segmentedControlChanged(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex{
         case 0:
