@@ -572,10 +572,10 @@
             </objects>
             <point key="canvasLocation" x="1914" y="3652"/>
         </scene>
-        <!--View Controller-->
+        <!--City Info Collection View Controller-->
         <scene sceneID="rzo-uB-JJo">
             <objects>
-                <viewController id="hFt-PC-Lt9" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CityInfoCollectionViewController" id="hFt-PC-Lt9" customClass="CityInfoCollectionViewController" customModule="Tripple" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gYU-en-neZ">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -591,8 +591,9 @@
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ecA-3p-z4d">
                                 <rect key="frame" x="16" y="212" width="361" height="32"/>
                                 <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
+                                    <segment title="모두"/>
+                                    <segment title="국내"/>
+                                    <segment title="해외"/>
                                 </segments>
                             </segmentedControl>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Qn8-Lv-y1I">
