@@ -33,7 +33,9 @@ class CityInfoCollectionViewCell: UICollectionViewCell {
         if let url = URL(string: city.city_image){
             cityImageView.kf.setImage(with: url)
         }
-        
+        cityImageView.layer.cornerRadius = bounds.width / 2
+        cityImageView.clipsToBounds = true
+
         cityNameLabel.text = city.city_name + " | " + city.city_english_name
         cityNameLabel.asColr(targetString: targetText)
         

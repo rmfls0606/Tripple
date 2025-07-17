@@ -65,9 +65,6 @@ class CityInfoCollectionViewController: UIViewController, UICollectionViewDelega
         }
         
         cell.configure(city: cityInfoData[indexPath.row], targetText: inputText)
-        cell.cityImageView.layer.cornerRadius = cell.bounds.width / 2
-        cell.cityImageView.clipsToBounds = true
-        
         
         return cell
     }
