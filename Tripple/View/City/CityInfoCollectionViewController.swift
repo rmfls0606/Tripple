@@ -37,13 +37,13 @@ class CityInfoCollectionViewController: UIViewController, UICollectionViewDelega
         
         let layout = UICollectionViewFlowLayout()
         let padding = 16.0
-        let spacing = 8.0
+        let spacing = 16.0
         let dimension = (UIScreen.main.bounds.width - (padding * 2) - spacing) / 2
         layout.itemSize = CGSize(width: dimension, height: dimension * 1.4)
         layout.minimumLineSpacing = spacing
         layout.minimumInteritemSpacing = spacing
         layout.sectionInset = UIEdgeInsets(
-            top: 0,
+            top: 8,
             left: padding,
             bottom: spacing,
             right: padding
@@ -65,6 +65,9 @@ class CityInfoCollectionViewController: UIViewController, UICollectionViewDelega
         }
         
         cell.configure(city: cityInfoData[indexPath.row])
+        cell.cityImageView.layer.cornerRadius = cell.bounds.width / 2
+        cell.cityImageView.clipsToBounds = true
+        
         
         return cell
     }
