@@ -65,4 +65,17 @@ class CityInfoCollectionViewController: UIViewController, UICollectionViewDelega
         
         return cell
     }
+    
+    @IBAction func segmentedControlChanged(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex{
+        case 0:
+            cityInfoData = CityInfo().city
+        case 1:
+            cityInfoData = CityInfo().city.filter{$0.domestic_travel}
+        default:
+            cityInfoData = CityInfo().city.filter{!$0.domestic_travel}
+        }
+        
+        cityInfoCollectionView.reloadData()
+    }
 }

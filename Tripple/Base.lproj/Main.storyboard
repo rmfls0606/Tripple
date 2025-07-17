@@ -595,6 +595,9 @@
                                     <segment title="국내"/>
                                     <segment title="해외"/>
                                 </segments>
+                                <connections>
+                                    <action selector="segmentedControlChanged:" destination="hFt-PC-Lt9" eventType="valueChanged" id="kQA-IU-UEJ"/>
+                                </connections>
                             </segmentedControl>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Qn8-Lv-y1I">
                                 <rect key="frame" x="0.0" y="251" width="393" height="484"/>
