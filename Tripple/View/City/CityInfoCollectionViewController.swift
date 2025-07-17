@@ -101,4 +101,25 @@ class CityInfoCollectionViewController: UIViewController, UICollectionViewDelega
         
         cityInfoCollectionView.reloadData()
     }
+    
+    
+    @IBAction func cityInputTextFieldChanged(_ sender: UITextField) {
+        guard let text = sender.text, !text.trimmingCharacters(in: .whitespaces).isEmpty else {
+            inputText = ""
+            cityInfoData = filteredData
+            cityInfoCollectionView.reloadData()
+            return
+        }
+        
+        inputText = text
+        cityInfoData = filteredData
+            .filter{
+                $0.city_name
+                    .contains(text) || $0.city_english_name
+                    .lowercased()
+                    .contains(text) || $0.city_explain.contains(text)
+            }
+
+        cityInfoCollectionView.reloadData()
+    }
 }
