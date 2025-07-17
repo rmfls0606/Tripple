@@ -61,6 +61,8 @@ class CityInfoCollectionViewController: UIViewController, UICollectionViewDelega
             return UICollectionViewCell()
         }
         
+        cell.configure(city: cityInfoData[indexPath.row])
+        
         return cell
     }
 }

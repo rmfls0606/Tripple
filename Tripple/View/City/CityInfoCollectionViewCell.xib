@@ -50,6 +50,11 @@
                 <constraint firstAttribute="trailing" secondItem="OH3-zn-9Vm" secondAttribute="trailing" id="q2S-7K-jOs"/>
             </constraints>
             <size key="customSize" width="260" height="563"/>
+            <connections>
+                <outlet property="cityExplainLabel" destination="OH3-zn-9Vm" id="RCX-4B-26l"/>
+                <outlet property="cityImageView" destination="q6i-a0-Cu0" id="GMx-nI-MLo"/>
+                <outlet property="cityNameLabel" destination="BPh-cl-vXZ" id="pSO-5E-KGJ"/>
+            </connections>
             <point key="canvasLocation" x="196.94656488549617" y="200.35211267605635"/>
         </collectionViewCell>
     </objects>
