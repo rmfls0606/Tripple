@@ -13,6 +13,9 @@ class CityInfoCollectionViewController: UIViewController, UICollectionViewDelega
     @IBOutlet var cityInfoCollectionView: UICollectionView!
     
     private var cityInfoData = CityInfo().city
+    private var filteredData = CityInfo().city
+    
+    var inputText: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,12 +72,32 @@ class CityInfoCollectionViewController: UIViewController, UICollectionViewDelega
     @IBAction func segmentedControlChanged(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex{
         case 0:
-            cityInfoData = CityInfo().city
+            filteredData = CityInfo().city
         case 1:
-            cityInfoData = CityInfo().city.filter{$0.domestic_travel}
+            filteredData = CityInfo().city.filter{$0.domestic_travel}
         default:
-            cityInfoData = CityInfo().city.filter{!$0.domestic_travel}
+            filteredData = CityInfo().city.filter{!$0.domestic_travel}
         }
+        cityInfoData = filteredData
+        cityInfoCollectionView.reloadData()
+    }
+    
+    @IBAction func cityInputTextFieldReturn(_ sender: UITextField) {
+        guard let text = sender.text, !text.trimmingCharacters(in: .whitespaces).isEmpty else {
+            inputText = ""
+            cityInfoData = filteredData
+            cityInfoCollectionView.reloadData()
+            return
+        }
+        
+        inputText = text
+        cityInfoData = filteredData
+            .filter{
+                $0.city_name
+                    .contains(text) || $0.city_english_name
+                    .lowercased()
+                    .contains(text) || $0.city_explain.contains(text)
+            }
         
         cityInfoCollectionView.reloadData()
     }
