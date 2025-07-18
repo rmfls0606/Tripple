@@ -853,10 +853,10 @@
             </objects>
             <point key="canvasLocation" x="1053" y="5099"/>
         </scene>
-        <!--View Controller-->
+        <!--Travel Talk View Controller-->
         <scene sceneID="IPQ-BF-KY5">
             <objects>
-                <viewController id="c6b-DF-k8q" sceneMemberID="viewController">
+                <viewController id="c6b-DF-k8q" customClass="TravelTalkViewController" customModule="Tripple" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Vt8-au-KWK">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -902,6 +902,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="PsN-co-svo"/>
+                    <connections>
+                        <outlet property="travelTalkCollectionView" destination="Tpr-an-GQu" id="LWC-7u-q3h"/>
+                        <outlet property="travelTalkSearchBar" destination="cKA-9k-bT0" id="tOs-wc-oq6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AX8-Pl-FWs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
