@@ -7,11 +7,12 @@
 
 import UIKit
 
-class TravelTalkViewController: UIViewController {
-
+class TravelTalkViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
     @IBOutlet var travelTalkSearchBar: UISearchBar!
     @IBOutlet var travelTalkCollectionView: UICollectionView!
+    
+    private let chatList = ChatList.list
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,5 +26,35 @@ class TravelTalkViewController: UIViewController {
         
         travelTalkSearchBar.placeholder = "친구 이름을 검색해보세요"
         travelTalkSearchBar.searchBarStyle = .minimal
+        
+        let xib = UINib(nibName: "ChatRoomCollectionViewCell", bundle: nil)
+        travelTalkCollectionView
+            .register(
+                xib,
+                forCellWithReuseIdentifier: ChatRoomCollectionViewCell.identifier
+            )
+        travelTalkCollectionView.delegate = self
+        travelTalkCollectionView.dataSource = self
+        
+        let layout = UICollectionViewFlowLayout()
+        let deviceWidth = UIScreen.main.bounds.width
+        layout.itemSize = CGSize(width: deviceWidth, height: 80)
+        
+        travelTalkCollectionView.collectionViewLayout = layout
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return chatList.count
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: ChatRoomCollectionViewCell.identifier,
+            for: indexPath
+        ) as? ChatRoomCollectionViewCell else{
+            return UICollectionViewCell()
+        }
+        
+        return cell
     }
 }
