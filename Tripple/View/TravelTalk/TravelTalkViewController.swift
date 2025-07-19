@@ -55,6 +55,9 @@ class TravelTalkViewController: UIViewController, UICollectionViewDelegate, UICo
             return UICollectionViewCell()
         }
         
+        let list = chatList[indexPath.item]
+        cell.configureData(list: list)
+        
         return cell
     }
 }
