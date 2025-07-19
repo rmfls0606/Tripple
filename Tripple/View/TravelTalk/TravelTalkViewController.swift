@@ -12,6 +12,8 @@ class TravelTalkViewController: UIViewController, UICollectionViewDelegate, UICo
     @IBOutlet var travelTalkSearchBar: UISearchBar!
     @IBOutlet var travelTalkCollectionView: UICollectionView!
     
+    private let dateFormatter = DateFormatter()
+    
     private let chatList = ChatList.list
     
     override func viewDidLoad() {
@@ -57,7 +59,27 @@ class TravelTalkViewController: UIViewController, UICollectionViewDelegate, UICo
         
         let list = chatList[indexPath.item]
         cell.configureData(list: list)
+        cell.chatDateLabel.text = chatListDate(
+            chatDate: list.chatList.last?.date
+        )
+        
         
         return cell
+    }
+    
+    func chatListDate(chatDate: String?) -> String{
+        guard let chatDate = chatDate else {
+            return "-"
+        }
+        
+        dateFormatter.dateFormat = "yy-MM-dd HH:mm"
+        let date = dateFormatter.date(from: chatDate)
+        
+        guard let date = date else {
+            return "-"
+        }
+        
+        dateFormatter.dateFormat = "yy.MM.dd"
+        return dateFormatter.string(from: date)
     }
 }
