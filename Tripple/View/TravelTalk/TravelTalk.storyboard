@@ -131,7 +131,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="ChatTableView" destination="kfX-A7-DvV" id="F5s-vF-Xjs"/>
+                        <outlet property="chatTableView" destination="kfX-A7-DvV" id="F5s-vF-Xjs"/>
                         <outlet property="inputMessageTextField" destination="LkT-F4-fKi" id="eI0-xg-xte"/>
                         <outlet property="messageSendButton" destination="ec1-Vg-EQ7" id="YjC-FD-HxU"/>
                     </connections>

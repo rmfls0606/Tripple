@@ -72,7 +72,12 @@ class TravelTalkViewController: UIViewController, UICollectionViewDelegate, UICo
         didSelectItemAt indexPath: IndexPath
     ) {
         let storyboard = UIStoryboard(name: "TravelTalk", bundle: nil)
-        let viewController = storyboard.instantiateViewController(identifier: "TravelTalkChatViewController")
+        guard let viewController = storyboard.instantiateViewController(
+            identifier: "TravelTalkChatViewController"
+        ) as? TravelTalkChatViewController else { return }
+        
+        viewController.chatData = chatList[indexPath.item]
+        
         navigationController?.pushViewController(viewController, animated: true)
     }
     
