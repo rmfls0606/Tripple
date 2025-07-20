@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
 
 class TravelTalkChatViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextViewDelegate {
     
@@ -27,6 +28,9 @@ class TravelTalkChatViewController: UIViewController, UITableViewDelegate, UITab
     }
     
     private func configure(){
+        
+        IQKeyboardManager.shared.isEnabled = true
+        
         chatInputView.backgroundColor = .systemGray6
         chatInputView.clipsToBounds = true
         chatInputView.layer.cornerRadius = 10
@@ -146,7 +150,7 @@ class TravelTalkChatViewController: UIViewController, UITableViewDelegate, UITab
         scrollToBottom()
     }
     
-    func chatDate(chatDate: String?) -> String{
+    private func chatDate(chatDate: String?) -> String{
         guard let chatDate = chatDate else {
             return "-"
         }
