@@ -39,6 +39,7 @@ class ChatRoomCollectionViewCell: UICollectionViewCell {
         chatContentLabel.textColor = .systemGray
         
         chatDateLabel.font = .systemFont(ofSize: 10)
+        chatDateLabel.textColor = .systemGray
     }
 
     func configureData(list: ChatRoom){

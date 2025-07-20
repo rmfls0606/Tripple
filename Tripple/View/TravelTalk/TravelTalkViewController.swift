@@ -25,6 +25,7 @@ class TravelTalkViewController: UIViewController, UICollectionViewDelegate, UICo
     private func configure(){
         navigationItem.title = "TRAVEL TALK"
         navigationItem.largeTitleDisplayMode = .inline
+        navigationItem.backButtonTitle = ""
         
         travelTalkSearchBar.placeholder = "친구 이름을 검색해보세요"
         travelTalkSearchBar.searchBarStyle = .minimal
