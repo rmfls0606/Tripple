@@ -110,4 +110,6 @@ class TravelTalkChatViewController: UIViewController, UITableViewDelegate, UITab
         dateFormatter.locale = Locale(identifier: "ko_KR")
         return dateFormatter.string(from: date)
     }
+    
+    
 }

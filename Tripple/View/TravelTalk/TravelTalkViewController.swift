@@ -7,14 +7,14 @@
 
 import UIKit
 
-class TravelTalkViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class TravelTalkViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate {
 
     @IBOutlet var travelTalkSearchBar: UISearchBar!
     @IBOutlet var travelTalkCollectionView: UICollectionView!
     
     private let dateFormatter = DateFormatter()
     
-    private let chatList = ChatList.list
+    private var chatList = ChatList.list
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +38,7 @@ class TravelTalkViewController: UIViewController, UICollectionViewDelegate, UICo
             )
         travelTalkCollectionView.delegate = self
         travelTalkCollectionView.dataSource = self
+        travelTalkSearchBar.delegate = self
         
         let layout = UICollectionViewFlowLayout()
         let deviceWidth = UIScreen.main.bounds.width
@@ -96,5 +97,27 @@ class TravelTalkViewController: UIViewController, UICollectionViewDelegate, UICo
         
         dateFormatter.dateFormat = "yy.MM.dd"
         return dateFormatter.string(from: date)
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        resultChatList(text: searchBar.text)
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        resultChatList(text: searchBar.text)
+    }
+    
+    private func resultChatList(text: String?){
+        guard let text = text, !text.isEmpty else {
+            chatList = ChatList.list
+            travelTalkCollectionView.reloadData()
+            return
+        }
+        chatList = ChatList.list.filter{ chatRoom in
+            chatRoom.chatList.contains { chat in
+                chat.user.name.lowercased().contains(text.lowercased())
+            }
+        }
+        travelTalkCollectionView.reloadData()
     }
 }
