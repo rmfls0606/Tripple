@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bPA-dk-jpH">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Talk-->
+        <scene sceneID="gxS-hc-nCl">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bPA-dk-jpH" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Talk" image="message" catalog="system" id="vr7-lZ-MAm"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="a4j-Pn-YOE">
+                        <rect key="frame" x="0.0" y="118" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BiI-1v-s7h" kind="relationship" relationship="rootViewController" id="c5V-aX-wgt"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0px-eE-3At" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1053" y="5099"/>
+        </scene>
+        <!--Travel Talk View Controller-->
+        <scene sceneID="ont-tM-BKC">
+            <objects>
+                <viewController id="pMA-EJ-pIh" customClass="TravelTalkViewController" customModule="Tripple" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KgQ-v7-ZkN">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="3pX-fl-NkV">
+                                <rect key="frame" x="16" y="126" width="361" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="pMA-EJ-pIh" id="mMO-ff-E0q"/>
+                                </connections>
+                            </searchBar>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="uey-xZ-Mwr">
+                                <rect key="frame" x="0.0" y="182" width="393" height="602"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="anJ-Zb-erf">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="3ck-dm-yDR">
+                                        <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="SRO-uO-hgr">
+                                            <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Lpp-JA-38V"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Lpp-JA-38V" firstAttribute="bottom" secondItem="uey-xZ-Mwr" secondAttribute="bottom" id="6nj-lU-NdM"/>
+                            <constraint firstItem="Lpp-JA-38V" firstAttribute="trailing" secondItem="3pX-fl-NkV" secondAttribute="trailing" constant="16" id="DP1-vA-MyW"/>
+                            <constraint firstItem="3pX-fl-NkV" firstAttribute="top" secondItem="Lpp-JA-38V" secondAttribute="top" constant="8" id="VdI-5a-YPW"/>
+                            <constraint firstItem="uey-xZ-Mwr" firstAttribute="leading" secondItem="Lpp-JA-38V" secondAttribute="leading" id="YhI-rN-8bi"/>
+                            <constraint firstItem="uey-xZ-Mwr" firstAttribute="top" secondItem="3pX-fl-NkV" secondAttribute="bottom" id="b0h-Xz-CvP"/>
+                            <constraint firstItem="Lpp-JA-38V" firstAttribute="trailing" secondItem="uey-xZ-Mwr" secondAttribute="trailing" id="kQH-Iq-YOC"/>
+                            <constraint firstItem="3pX-fl-NkV" firstAttribute="leading" secondItem="Lpp-JA-38V" secondAttribute="leading" constant="16" id="lVM-JA-XAs"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="I8A-Zn-W0t"/>
+                    <connections>
+                        <outlet property="travelTalkCollectionView" destination="uey-xZ-Mwr" id="hSj-yH-5VB"/>
+                        <outlet property="travelTalkSearchBar" destination="3pX-fl-NkV" id="loz-RO-o5n"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3QN-p9-CNS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1913.740458015267" y="5098.5915492957747"/>
+        </scene>
+        <!--Travel Talk View Controller-->
+        <scene sceneID="Cwn-Dw-zp5">
+            <objects>
+                <viewController id="BiI-1v-s7h" customClass="TravelTalkViewController" customModule="Tripple" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4ag-1S-qeV">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="DjD-zH-mv2">
+                                <rect key="frame" x="16" y="170" width="361" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BiI-1v-s7h" id="8QT-qv-Tkd"/>
+                                </connections>
+                            </searchBar>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="50W-Qz-Xoi">
+                                <rect key="frame" x="0.0" y="226" width="393" height="558"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="iLJ-my-zCS">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Zzn-Fi-Nlz">
+                                        <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="R50-qG-Gbj">
+                                            <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="WoN-GH-g0h"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="50W-Qz-Xoi" firstAttribute="leading" secondItem="WoN-GH-g0h" secondAttribute="leading" id="Bhi-eT-Ted"/>
+                            <constraint firstItem="50W-Qz-Xoi" firstAttribute="top" secondItem="DjD-zH-mv2" secondAttribute="bottom" id="Fty-6h-tER"/>
+                            <constraint firstItem="WoN-GH-g0h" firstAttribute="trailing" secondItem="50W-Qz-Xoi" secondAttribute="trailing" id="Ouz-w9-0jB"/>
+                            <constraint firstItem="DjD-zH-mv2" firstAttribute="leading" secondItem="WoN-GH-g0h" secondAttribute="leading" constant="16" id="Rk6-WI-Dfr"/>
+                            <constraint firstItem="DjD-zH-mv2" firstAttribute="top" secondItem="WoN-GH-g0h" secondAttribute="top" constant="8" id="j5J-in-CW2"/>
+                            <constraint firstItem="WoN-GH-g0h" firstAttribute="bottom" secondItem="50W-Qz-Xoi" secondAttribute="bottom" id="v6K-u7-x5H"/>
+                            <constraint firstItem="WoN-GH-g0h" firstAttribute="trailing" secondItem="DjD-zH-mv2" secondAttribute="trailing" constant="16" id="vNZ-WS-BRn"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="us1-Ow-pSo"/>
+                    <connections>
+                        <outlet property="travelTalkCollectionView" destination="50W-Qz-Xoi" id="kjI-jm-OKP"/>
+                        <outlet property="travelTalkSearchBar" destination="DjD-zH-mv2" id="bnD-wd-XWj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vaG-Vl-5rK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1913.740458015267" y="5098.5915492957747"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="message" catalog="system" width="128" height="116"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
