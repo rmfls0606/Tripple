@@ -72,9 +72,9 @@
                 <constraints>
                     <constraint firstItem="QBX-kQ-9mA" firstAttribute="top" secondItem="lDb-ch-Fj7" secondAttribute="bottom" constant="8" id="C05-rH-iSQ"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="lDb-ch-Fj7" secondAttribute="trailing" constant="8" id="HNs-94-frV"/>
+                    <constraint firstItem="lDb-ch-Fj7" firstAttribute="leading" secondItem="t0y-By-TlW" secondAttribute="trailing" constant="8" id="LJf-dO-qVA"/>
                     <constraint firstItem="t0y-By-TlW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="Vp4-cb-Ojo"/>
                     <constraint firstItem="QBX-kQ-9mA" firstAttribute="leading" secondItem="t0y-By-TlW" secondAttribute="trailing" constant="8" id="WWi-Vt-rLF"/>
-                    <constraint firstItem="lDb-ch-Fj7" firstAttribute="leading" secondItem="t0y-By-TlW" secondAttribute="trailing" constant="8" id="Zng-XM-RTp"/>
                     <constraint firstItem="t0y-By-TlW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="ezj-ns-URb"/>
                     <constraint firstItem="lDb-ch-Fj7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="gSv-T0-AEQ"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="QBX-kQ-9mA" secondAttribute="trailing" constant="8" id="rlc-gM-mVc"/>
