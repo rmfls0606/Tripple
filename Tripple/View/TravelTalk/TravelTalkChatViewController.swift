@@ -60,6 +60,8 @@ class TravelTalkChatViewController: UIViewController, UITableViewDelegate, UITab
     private func configureData(){
         navigationItem.title = chatData?.chatroomName ?? "알 수 없음"
         navigationItem.largeTitleDisplayMode = .inline
+        
+        scrollToBottom()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -113,6 +115,12 @@ class TravelTalkChatViewController: UIViewController, UITableViewDelegate, UITab
         dateFormatter.locale = Locale(identifier: "ko_KR")
         return dateFormatter.string(from: date)
     }
-    
+
+    private func scrollToBottom(){
+        guard let chatData = chatData else { return }
+        
+        let indexPath = IndexPath(item: chatData.chatList.count - 1, section: 0)
+        self.chatTableView.scrollToRow(at: indexPath, at: .top, animated: true)
+    }
     
 }
