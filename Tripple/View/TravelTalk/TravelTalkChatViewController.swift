@@ -9,13 +9,21 @@ import UIKit
 
 class TravelTalkChatViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet var chatInputView: UIView!
+    @IBOutlet var chatEmptyLabel: UILabel!
     @IBOutlet var chatTableView: UITableView!
-    @IBOutlet var inputMessageTextField: UITextField!
+    @IBOutlet var chatInputTextView: UITextView!
     @IBOutlet var messageSendButton: UIButton!
     
     let dateFormatter = DateFormatter()
     
     var chatData: ChatRoom?
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        chatInputView.layer.cornerRadius = chatInputView.bounds.height / 4
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,13 +33,22 @@ class TravelTalkChatViewController: UIViewController, UITableViewDelegate, UITab
     }
     
     private func configure(){
-        inputMessageTextField.backgroundColor = .systemGray6
-        inputMessageTextField.placeholder = "메세지를 입력하세요"
-        inputMessageTextField.borderStyle = .roundedRect
-        inputMessageTextField.rightView = UIView(
-            frame: CGRect(x: 0, y: 0, width: 44, height: 44)
+        chatInputView.backgroundColor = .systemGray6
+        chatInputView.clipsToBounds = true
+        
+        chatEmptyLabel.text = "메세지를 입력하세요"
+        chatEmptyLabel.font = .systemFont(ofSize: 14)
+        chatEmptyLabel.textColor = .systemGray2
+        
+        chatInputTextView.backgroundColor = .systemGray6
+        chatInputTextView.text = ""
+        chatInputTextView.font = .systemFont(ofSize: 14)
+        chatInputTextView.textContainerInset = UIEdgeInsets(
+            top: 10,
+            left: 5,
+            bottom: 10,
+            right: 5
         )
-        inputMessageTextField.rightViewMode = .always
         
         let image = UIImage(systemName: "paperplane")?.withTintColor(
             .systemGray2,
