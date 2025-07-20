@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TravelTalkChatViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class TravelTalkChatViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextViewDelegate {
     
     @IBOutlet var chatInputView: UIView!
     @IBOutlet var chatEmptyLabel: UILabel!
@@ -68,6 +68,7 @@ class TravelTalkChatViewController: UIViewController, UITableViewDelegate, UITab
             .register(meXib, forCellReuseIdentifier: MeTableViewCell.identifier)
         chatTableView.delegate = self
         chatTableView.dataSource = self
+        chatInputTextView.delegate = self
         
         chatTableView.separatorStyle = .none
         
@@ -114,6 +115,10 @@ class TravelTalkChatViewController: UIViewController, UITableViewDelegate, UITab
             
             return cell
         }
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        chatEmptyLabel.isHidden = true
     }
     
     func chatDate(chatDate: String?) -> String{
