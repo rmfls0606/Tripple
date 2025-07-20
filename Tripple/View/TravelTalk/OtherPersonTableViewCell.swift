@@ -40,6 +40,8 @@ class OtherPersonTableViewCell: UITableViewCell {
         
         dateLabel.font = .systemFont(ofSize: 10)
         dateLabel.textColor = .systemGray
+        
+        selectionStyle = .none
     }
     
     func configureData(chat: Chat?){
