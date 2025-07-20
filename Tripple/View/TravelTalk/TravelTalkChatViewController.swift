@@ -148,6 +148,7 @@ class TravelTalkChatViewController: UIViewController, UITableViewDelegate, UITab
         chatInputTextView.text = ""
         messageSendButton.isEnabled = false
         chatTableView.reloadData()
+        scrollToBottom()
     }
     
     func chatDate(chatDate: String?) -> String{
