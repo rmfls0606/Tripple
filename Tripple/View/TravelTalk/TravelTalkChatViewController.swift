@@ -150,6 +150,14 @@ class TravelTalkChatViewController: UIViewController, UITableViewDelegate, UITab
         scrollToBottom()
     }
     
+    @IBAction func viewTappedGesture(_ sender: UITapGestureRecognizer) {
+        if let text = chatInputTextView.text, text
+            .trimmingCharacters(in: .whitespaces).isEmpty{
+            chatEmptyLabel.isHidden = false
+        }
+        view.endEditing(true)
+    }
+    
     private func chatDate(chatDate: String?) -> String{
         guard let chatDate = chatDate else {
             return "-"
