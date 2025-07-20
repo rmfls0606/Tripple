@@ -20,6 +20,12 @@ class TravelTalkChatViewController: UIViewController, UITableViewDelegate, UITab
     
     var chatData: ChatRoom?
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        self.scrollToBottom()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -78,8 +84,6 @@ class TravelTalkChatViewController: UIViewController, UITableViewDelegate, UITab
     private func configureData(){
         navigationItem.title = chatData?.chatroomName ?? "알 수 없음"
         navigationItem.largeTitleDisplayMode = .inline
-        
-        scrollToBottom()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -147,7 +151,6 @@ class TravelTalkChatViewController: UIViewController, UITableViewDelegate, UITab
         chatInputTextView.text = ""
         messageSendButton.isEnabled = false
         chatTableView.reloadData()
-        scrollToBottom()
     }
     
     @IBAction func viewTappedGesture(_ sender: UITapGestureRecognizer) {
@@ -179,7 +182,8 @@ class TravelTalkChatViewController: UIViewController, UITableViewDelegate, UITab
         guard let chatData = chatData else { return }
         
         let indexPath = IndexPath(item: chatData.chatList.count - 1, section: 0)
-        self.chatTableView.scrollToRow(at: indexPath, at: .top, animated: true)
+        self.chatTableView
+            .scrollToRow(at: indexPath, at: .bottom, animated: true)
     }
     
 }
