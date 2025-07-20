@@ -22,7 +22,6 @@ class TravelTalkChatViewController: UIViewController, UITableViewDelegate, UITab
         
         configure()
         configureData()
-        chatTableView.separatorStyle = .none
     }
     
     private func configure(){
@@ -52,6 +51,10 @@ class TravelTalkChatViewController: UIViewController, UITableViewDelegate, UITab
             .register(meXib, forCellReuseIdentifier: MeTableViewCell.identifier)
         chatTableView.delegate = self
         chatTableView.dataSource = self
+        
+        chatTableView.separatorStyle = .none
+        
+        chatTableView.rowHeight = UITableView.automaticDimension
     }
     
     private func configureData(){
