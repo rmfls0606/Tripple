@@ -17,7 +17,6 @@ class MeTableViewCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        contentBorderView.layer.cornerRadius = contentBorderView.bounds.height / 4
     }
     
     override func awakeFromNib() {
@@ -30,6 +29,7 @@ class MeTableViewCell: UITableViewCell {
         contentBorderView.layer.borderWidth = 1.0
         contentBorderView.layer.borderColor = UIColor.systemGray.cgColor
         contentBorderView.backgroundColor = .systemGray4
+        contentBorderView.layer.cornerRadius = 10
         
         contentLabel.font = .systemFont(ofSize: 12)
         contentLabel.numberOfLines = 0

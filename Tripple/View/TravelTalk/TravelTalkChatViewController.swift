@@ -19,12 +19,6 @@ class TravelTalkChatViewController: UIViewController, UITableViewDelegate, UITab
     
     var chatData: ChatRoom?
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        
-        chatInputView.layer.cornerRadius = chatInputView.bounds.height / 4
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,6 +29,7 @@ class TravelTalkChatViewController: UIViewController, UITableViewDelegate, UITab
     private func configure(){
         chatInputView.backgroundColor = .systemGray6
         chatInputView.clipsToBounds = true
+        chatInputView.layer.cornerRadius = 10
         
         chatEmptyLabel.text = "메세지를 입력하세요"
         chatEmptyLabel.font = .systemFont(ofSize: 14)

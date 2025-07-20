@@ -33,7 +33,7 @@ class OtherPersonTableViewCell: UITableViewCell {
         
         contentBorderView.layer.borderWidth = 1.0
         contentBorderView.layer.borderColor = UIColor.systemGray.cgColor
-        contentBorderView.layer.cornerRadius = contentBorderView.bounds.height / 4
+        contentBorderView.layer.cornerRadius = 10
         
         contentLabel.font = .systemFont(ofSize: 12)
         contentLabel.numberOfLines = 0
