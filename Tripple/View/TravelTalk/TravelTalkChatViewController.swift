@@ -56,6 +56,7 @@ class TravelTalkChatViewController: UIViewController, UITableViewDelegate, UITab
         )
         messageSendButton.setImage(image, for: .normal)
         messageSendButton.setTitle("", for: .normal)
+        messageSendButton.isEnabled = false
         
         let otherPersonXib = UINib(nibName: "OtherPersonTableViewCell", bundle: nil)
         chatTableView
@@ -119,6 +120,34 @@ class TravelTalkChatViewController: UIViewController, UITableViewDelegate, UITab
     
     func textViewDidBeginEditing(_ textView: UITextView) {
         chatEmptyLabel.isHidden = true
+    }
+    
+    func textViewDidChange(_ textView: UITextView) {
+        guard let text = textView.text, !text
+            .trimmingCharacters(in: .whitespaces).isEmpty else {
+            messageSendButton.isEnabled = false
+            return
+        }
+        
+        messageSendButton.isEnabled = true
+    }
+    
+    @IBAction func messageSendButtonClicked(_ sender: UIButton) {
+        guard let text = chatInputTextView.text, !text
+            .trimmingCharacters(in: .whitespaces).isEmpty else {
+            return
+        }
+        
+        view.endEditing(true)
+        dateFormatter.dateFormat = "yy-MM-dd HH:mm"
+        let dateString = dateFormatter.string(from: Date())
+        
+        let chat = Chat(user: ChatList.me, date: dateString, message: text)
+        chatData?.chatList.append(chat)
+        chatEmptyLabel.isHidden = false
+        chatInputTextView.text = ""
+        messageSendButton.isEnabled = false
+        chatTableView.reloadData()
     }
     
     func chatDate(chatDate: String?) -> String{
