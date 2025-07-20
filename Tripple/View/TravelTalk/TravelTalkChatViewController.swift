@@ -47,6 +47,9 @@ class TravelTalkChatViewController: UIViewController, UITableViewDelegate, UITab
                 otherPersonXib,
                 forCellReuseIdentifier: OtherPersonTableViewCell.identifier
             )
+        let meXib = UINib(nibName: "MeTableViewCell", bundle: nil)
+        chatTableView
+            .register(meXib, forCellReuseIdentifier: MeTableViewCell.identifier)
         chatTableView.delegate = self
         chatTableView.dataSource = self
     }
@@ -61,19 +64,29 @@ class TravelTalkChatViewController: UIViewController, UITableViewDelegate, UITab
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(
-            withIdentifier: OtherPersonTableViewCell.identifier,
-            for: indexPath
-        ) as? OtherPersonTableViewCell else {
-            return UITableViewCell()
+        if chatData?.chatList[indexPath.row].user != ChatList.me {
+            guard let cell = tableView.dequeueReusableCell(
+                withIdentifier: OtherPersonTableViewCell.identifier,
+                for: indexPath
+            ) as? OtherPersonTableViewCell else {
+                return UITableViewCell()
+            }
+            cell.configureData(chat: chatData?.chatList[indexPath.row])
+            cell.dateLabel.text = chatDate(
+                chatDate: chatData?.chatList[indexPath.row].date
+            )
+            
+            return cell
+        }else{
+            guard let cell = tableView.dequeueReusableCell(
+                withIdentifier: MeTableViewCell.identifier,
+                for: indexPath
+            ) as? MeTableViewCell else {
+                return UITableViewCell()
+            }
+            
+            return cell
         }
-        
-        cell.configureData(chat: chatData?.chatList[indexPath.row])
-        cell.dateLabel.text = chatDate(
-            chatDate: chatData?.chatList[indexPath.row].date
-        )
-        
-        return cell
     }
     
     func chatDate(chatDate: String?) -> String{
