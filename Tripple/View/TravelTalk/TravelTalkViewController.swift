@@ -67,6 +67,15 @@ class TravelTalkViewController: UIViewController, UICollectionViewDelegate, UICo
         return cell
     }
     
+    func collectionView(
+        _ collectionView: UICollectionView,
+        didSelectItemAt indexPath: IndexPath
+    ) {
+        let storyboard = UIStoryboard(name: "TravelTalk", bundle: nil)
+        let viewController = storyboard.instantiateViewController(identifier: "TravelTalkChatViewController")
+        navigationController?.pushViewController(viewController, animated: true)
+    }
+    
     func chatListDate(chatDate: String?) -> String{
         guard let chatDate = chatDate else {
             return "-"
