@@ -39,4 +39,8 @@ class MeTableViewCell: UITableViewCell {
         
         selectionStyle = .none
     }
+    
+    func configureData(chat: Chat?){
+        contentLabel.text = chat?.message
+    }
 }

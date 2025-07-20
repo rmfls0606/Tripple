@@ -85,6 +85,11 @@ class TravelTalkChatViewController: UIViewController, UITableViewDelegate, UITab
                 return UITableViewCell()
             }
             
+            cell.configureData(chat: chatData?.chatList[indexPath.row])
+            cell.dateLabel.text = chatDate(
+                chatDate: chatData?.chatList[indexPath.row].date
+            )
+            
             return cell
         }
     }
