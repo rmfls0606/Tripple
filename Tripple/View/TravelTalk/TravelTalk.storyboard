@@ -86,10 +86,10 @@
             </objects>
             <point key="canvasLocation" x="1913.740458015267" y="5098.5915492957747"/>
         </scene>
-        <!--View Controller-->
+        <!--Travel Talk Chat View Controller-->
         <scene sceneID="hLG-rG-wh0">
             <objects>
-                <viewController id="lcj-4s-52l" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TravelTalkChatViewController" id="lcj-4s-52l" customClass="TravelTalkChatViewController" customModule="Tripple" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bBS-Cw-eLZ">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -104,15 +104,15 @@
                                     <constraint firstAttribute="height" constant="44" id="76f-uj-Hod"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" smartInsertDeleteType="no"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ec1-Vg-EQ7">
                                 <rect key="frame" x="341" y="724" width="44" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ec1-Vg-EQ7" secondAttribute="height" id="zYN-YN-qnb"/>
                                 </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="mZq-t8-H7B"/>
@@ -130,6 +130,11 @@
                             <constraint firstItem="LkT-F4-fKi" firstAttribute="leading" secondItem="mZq-t8-H7B" secondAttribute="leading" constant="8" id="yPL-rM-tuu"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="ChatTableView" destination="kfX-A7-DvV" id="F5s-vF-Xjs"/>
+                        <outlet property="inputMessageTextField" destination="LkT-F4-fKi" id="eI0-xg-xte"/>
+                        <outlet property="messageSendButton" destination="ec1-Vg-EQ7" id="YjC-FD-HxU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qxd-EZ-rX0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
