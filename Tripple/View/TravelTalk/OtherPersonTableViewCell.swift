@@ -21,7 +21,13 @@ class OtherPersonTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        configureView()
+    }
+    
+    private func configureView(){
         profileImageView.contentMode = .scaleAspectFill
+        profileImageView.backgroundColor = .systemGray4
+        profileImageView.layer.cornerRadius = profileImageView.bounds.width / 2
         
         nameLabel.font = .systemFont(ofSize: 14, weight: .semibold)
         
@@ -30,8 +36,18 @@ class OtherPersonTableViewCell: UITableViewCell {
         contentBorderView.layer.cornerRadius = contentBorderView.bounds.height / 4
         
         contentLabel.font = .systemFont(ofSize: 12)
+        contentLabel.numberOfLines = 0
         
         dateLabel.font = .systemFont(ofSize: 10)
         dateLabel.textColor = .systemGray
+    }
+    
+    func configureData(chat: Chat?){
+        if let imageName = chat?.user.image{
+            profileImageView.image = UIImage(named: imageName)
+        }
+        
+        nameLabel.text = chat?.user.name ?? "알 수 없음"
+        contentLabel.text = chat?.message
     }
 }

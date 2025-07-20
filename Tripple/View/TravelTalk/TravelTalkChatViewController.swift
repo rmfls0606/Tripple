@@ -13,6 +13,8 @@ class TravelTalkChatViewController: UIViewController, UITableViewDelegate, UITab
     @IBOutlet var inputMessageTextField: UITextField!
     @IBOutlet var messageSendButton: UIButton!
     
+    let dateFormatter = DateFormatter()
+    
     var chatData: ChatRoom?
     
     override func viewDidLoad() {
@@ -66,6 +68,28 @@ class TravelTalkChatViewController: UIViewController, UITableViewDelegate, UITab
             return UITableViewCell()
         }
         
+        cell.configureData(chat: chatData?.chatList[indexPath.row])
+        cell.dateLabel.text = chatDate(
+            chatDate: chatData?.chatList[indexPath.row].date
+        )
+        
         return cell
+    }
+    
+    func chatDate(chatDate: String?) -> String{
+        guard let chatDate = chatDate else {
+            return "-"
+        }
+        
+        dateFormatter.dateFormat = "yy-MM-dd HH:mm"
+        let date = dateFormatter.date(from: chatDate)
+        
+        guard let date = date else {
+            return "-"
+        }
+        
+        dateFormatter.dateFormat = "HH:mm aa"
+        dateFormatter.locale = Locale(identifier: "ko_KR")
+        return dateFormatter.string(from: date)
     }
 }
