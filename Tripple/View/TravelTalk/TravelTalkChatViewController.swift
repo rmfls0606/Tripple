@@ -20,6 +20,23 @@ class TravelTalkChatViewController: UIViewController, UITableViewDelegate, UITab
     
     var chatData: ChatRoom?
     
+    var filteredData: [(date: String, chatList: [Chat])]{
+        guard let chatData = chatData else { return [] }
+        
+        var dateChatDict: [String: [Chat]] = [:]
+        
+        for chat in chatData.chatList{
+            let dateKey = String(chat.date.prefix(10))
+            dateChatDict[dateKey, default: []].append(chat)
+        }
+        
+        return dateChatDict
+            .sorted(by: { $0.key < $1.key })
+            .map{ (date, chats) in
+                return (date: date, chatList: chats)
+        }
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
@@ -86,21 +103,26 @@ class TravelTalkChatViewController: UIViewController, UITableViewDelegate, UITab
         navigationItem.largeTitleDisplayMode = .inline
     }
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return filteredData.count
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return chatData?.chatList.count ?? 0
+        return filteredData[section].chatList.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if chatData?.chatList[indexPath.row].user != ChatList.me {
+        let chatData = filteredData[indexPath.section].chatList[indexPath.row]
+        if chatData.user != ChatList.me {
             guard let cell = tableView.dequeueReusableCell(
                 withIdentifier: OtherPersonTableViewCell.identifier,
                 for: indexPath
             ) as? OtherPersonTableViewCell else {
                 return UITableViewCell()
             }
-            cell.configureData(chat: chatData?.chatList[indexPath.row])
+            cell.configureData(chat: chatData)
             cell.dateLabel.text = chatDate(
-                chatDate: chatData?.chatList[indexPath.row].date
+                chatDate: chatData.date
             )
             
             return cell
@@ -112,9 +134,9 @@ class TravelTalkChatViewController: UIViewController, UITableViewDelegate, UITab
                 return UITableViewCell()
             }
             
-            cell.configureData(chat: chatData?.chatList[indexPath.row])
+            cell.configureData(chat: chatData)
             cell.dateLabel.text = chatDate(
-                chatDate: chatData?.chatList[indexPath.row].date
+                chatDate: chatData.date
             )
             
             return cell
@@ -210,9 +232,18 @@ class TravelTalkChatViewController: UIViewController, UITableViewDelegate, UITab
     }
 
     private func scrollToBottom(){
-        guard let chatData = chatData else { return }
+        guard !filteredData.isEmpty else {
+            return
+        }
         
-        let indexPath = IndexPath(item: chatData.chatList.count - 1, section: 0)
+        let section = filteredData.count - 1
+        
+        guard !filteredData[section].chatList.isEmpty else {
+            return
+        }
+        
+        let row = filteredData[section].chatList.count - 1
+        let indexPath = IndexPath(row: row, section: section)
         self.chatTableView
             .scrollToRow(at: indexPath, at: .bottom, animated: true)
     }
