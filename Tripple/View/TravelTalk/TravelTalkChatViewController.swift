@@ -202,7 +202,7 @@ class TravelTalkChatViewController: UIViewController, UITableViewDelegate, UITab
             }
         }
         
-        dateFormatter.dateFormat = "yy-MM-dd HH:mm"
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
         let dateString = dateFormatter.string(from: Date())
         
         let chat = Chat(user: ChatList.me, date: dateString, message: text)
