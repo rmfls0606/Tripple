@@ -95,22 +95,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="kfX-A7-DvV">
-                                <rect key="frame" x="0.0" y="117.99999999999997" width="393" height="425.33333333333326"/>
+                                <rect key="frame" x="0.0" y="118" width="393" height="606"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wnz-cx-uAW">
-                                <rect key="frame" x="8" y="551.33333333333337" width="377" height="216.66666666666663"/>
+                                <rect key="frame" x="8" y="732" width="377" height="36"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="qyt-hQ-Ff5">
-                                        <rect key="frame" x="0.0" y="0.0" width="326" height="216.66666666666666"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="346" height="36"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <color key="textColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w6F-EN-n2C">
-                                        <rect key="frame" x="326" y="165.66666666666663" width="46" height="46"/>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w6F-EN-n2C">
+                                        <rect key="frame" x="346" y="5" width="26" height="26"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="w6F-EN-n2C" secondAttribute="height" id="Eaa-hr-NMF"/>
                                         </constraints>
@@ -120,8 +120,8 @@
                                             <action selector="messageSendButtonClicked:" destination="lcj-4s-52l" eventType="touchUpInside" id="TDe-dE-bhW"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wE9-8r-cqj">
-                                        <rect key="frame" x="5" y="10" width="316" height="196.66666666666666"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wE9-8r-cqj">
+                                        <rect key="frame" x="5" y="10" width="336" height="16"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -139,6 +139,7 @@
                                     <constraint firstItem="wE9-8r-cqj" firstAttribute="top" secondItem="Wnz-cx-uAW" secondAttribute="top" constant="10" id="WGR-mm-Bld"/>
                                     <constraint firstItem="w6F-EN-n2C" firstAttribute="leading" secondItem="qyt-hQ-Ff5" secondAttribute="trailing" id="eYk-H4-Z8Q"/>
                                     <constraint firstItem="w6F-EN-n2C" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Wnz-cx-uAW" secondAttribute="top" constant="5" id="jAU-M8-sO0"/>
+                                    <constraint firstAttribute="height" constant="36" id="oCf-Vm-XHN"/>
                                     <constraint firstAttribute="bottom" secondItem="w6F-EN-n2C" secondAttribute="bottom" constant="5" id="x8S-d9-5LO"/>
                                 </constraints>
                             </view>
@@ -151,8 +152,8 @@
                             <constraint firstItem="mZq-t8-H7B" firstAttribute="trailing" secondItem="kfX-A7-DvV" secondAttribute="trailing" id="339-DA-CC9"/>
                             <constraint firstItem="kfX-A7-DvV" firstAttribute="top" secondItem="mZq-t8-H7B" secondAttribute="top" id="4Wq-ll-a4n"/>
                             <constraint firstItem="Wnz-cx-uAW" firstAttribute="leading" secondItem="mZq-t8-H7B" secondAttribute="leading" constant="8" id="Cnb-0G-0WB"/>
+                            <constraint firstItem="Wnz-cx-uAW" firstAttribute="top" secondItem="kfX-A7-DvV" secondAttribute="bottom" constant="8" id="XAN-dM-J0T"/>
                             <constraint firstItem="mZq-t8-H7B" firstAttribute="bottom" secondItem="Wnz-cx-uAW" secondAttribute="bottom" constant="16" id="ib2-Gn-yv3"/>
-                            <constraint firstItem="Wnz-cx-uAW" firstAttribute="top" secondItem="kfX-A7-DvV" secondAttribute="bottom" constant="8" id="jIA-ir-ues"/>
                             <constraint firstItem="mZq-t8-H7B" firstAttribute="trailing" secondItem="Wnz-cx-uAW" secondAttribute="trailing" constant="8" id="l5t-ow-ccK"/>
                         </constraints>
                         <connections>

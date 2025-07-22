@@ -129,8 +129,30 @@ class TravelTalkChatViewController: UIViewController, UITableViewDelegate, UITab
         guard let text = textView.text, !text
             .trimmingCharacters(in: .whitespaces).isEmpty else {
             messageSendButton.isEnabled = false
+            
+            chatInputView.constraints.forEach { constraint in
+                if constraint.firstAttribute == .height {
+                    constraint.constant = 36
+                }
+            }
             return
         }
+        
+        let lineHeight = textView.font?.lineHeight ?? 0
+        let insets = textView.textContainerInset.top + textView.textContainerInset.bottom
+        let maxLines = 3
+        let maxHeight = lineHeight * CGFloat(maxLines) + insets
+
+        let boundingSize = CGSize(width: textView.bounds.width, height: .infinity)
+        let textHeight = textView.sizeThatFits(boundingSize).height
+        
+        chatInputView.constraints.forEach { constraint in
+            if constraint.firstAttribute == .height {
+                constraint.constant = min(textHeight, maxHeight)
+            }
+        }
+ 
+        textView.isScrollEnabled = textHeight > maxHeight
         
         messageSendButton.isEnabled = true
     }
@@ -142,6 +164,13 @@ class TravelTalkChatViewController: UIViewController, UITableViewDelegate, UITab
         }
         
         view.endEditing(true)
+        
+        chatInputView.constraints.forEach { constraint in
+            if constraint.firstAttribute == .height {
+                constraint.constant = 36
+            }
+        }
+        
         dateFormatter.dateFormat = "yy-MM-dd HH:mm"
         let dateString = dateFormatter.string(from: Date())
         
@@ -151,6 +180,8 @@ class TravelTalkChatViewController: UIViewController, UITableViewDelegate, UITab
         chatInputTextView.text = ""
         messageSendButton.isEnabled = false
         chatTableView.reloadData()
+        
+        scrollToBottom()
     }
     
     @IBAction func viewTappedGesture(_ sender: UITapGestureRecognizer) {
@@ -185,5 +216,4 @@ class TravelTalkChatViewController: UIViewController, UITableViewDelegate, UITab
         self.chatTableView
             .scrollToRow(at: indexPath, at: .bottom, animated: true)
     }
-    
 }
