@@ -103,6 +103,15 @@ class TravelTalkChatViewController: UIViewController, UITableViewDelegate, UITab
         navigationItem.largeTitleDisplayMode = .inline
     }
     
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let label = UILabel()
+        label.text = filteredData[section].date
+        label.font = .systemFont(ofSize: 12)
+        label.textAlignment = .center
+        label.backgroundColor = .white
+        return label
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return filteredData.count
     }
